@@ -1,1 +1,314 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   ========================================================= */
+
+:root {
+  /* Paleta oficial */
+  --color-off-white-premium: #f4f1ec;
+  --color-ivory: #eae3d8;
+  --color-fendi: #d7c7b4;
+  --color-natural-walnut: #6e4f3a;
+  --color-champagne-gold: #b8924f;
+  --color-matte-graphite: #2b2b2b;
+  --color-sage-green: #a7b19d;
+
+  /* Cores complementares */
+  --color-white: #ffffff;
+  --color-walnut-dark: #4d3324;
+  --color-gold-dark: #98743a;
+  --color-sage-dark: #7f8d75;
+
+  /* Aplicações semânticas */
+  --color-background: var(--color-off-white-premium);
+  --color-surface: var(--color-white);
+  --color-surface-soft: var(--color-ivory);
+  --color-text: var(--color-matte-graphite);
+  --color-text-soft: #625a54;
+  --color-heading: var(--color-natural-walnut);
+  --color-primary: var(--color-champagne-gold);
+  --color-primary-hover: var(--color-gold-dark);
+  --color-accent: var(--color-sage-green);
+
+  /* Bordas */
+  --color-border: rgba(110, 79, 58, 0.16);
+  --color-border-strong: rgba(110, 79, 58, 0.3);
+
+  /* Tipografia */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+
+  /* Tamanhos de texto */
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-medium: 1.125rem;
+  --font-size-large: 1.5rem;
+
+  /* Larguras */
+  --container-width: 1240px;
+  --header-height: 92px;
+
+  /* Espaçamentos */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-section: 6rem;
+
+  /* Arredondamentos */
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 28px;
+  --radius-extra-large: 40px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-small: 0 8px 24px rgba(78, 53, 36, 0.06);
+  --shadow-card: 0 16px 45px rgba(78, 53, 36, 0.09);
+  --shadow-header: 0 5px 25px rgba(78, 53, 36, 0.05);
+
+  /* Animações */
+  --transition-fast: 160ms ease;
+  --transition-default: 250ms ease;
+}
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+p {
+  color: var(--color-text-soft);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background-color: var(--color-fendi);
+  color: var(--color-walnut-dark);
+}
+
+/* =========================================================
+   CLASSES GLOBAIS
+   ========================================================= */
+
+.container {
+  width: min(calc(100% - 48px), var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--spacing-section);
+}
+
+.section--ivory {
+  background-color: var(--color-ivory);
+}
+
+.section--fendi {
+  background-color: var(--color-fendi);
+}
+
+.section--walnut {
+  background-color: var(--color-natural-walnut);
+  color: var(--color-off-white-premium);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-champagne-gold);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  max-width: 760px;
+  margin-bottom: var(--spacing-lg);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section-description {
+  max-width: 680px;
+  font-size: var(--font-size-medium);
+}
+
+/* =========================================================
+   BOTÕES ESTILIZAÇÃO
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-medium);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-default),
+    border-color var(--transition-default),
+    color var(--transition-default),
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(184, 146, 79, 0.3);
+    outline-offset: 3px;
+  }
+}
+
+.btn--primary {
+  background-color: var(--color-champagne-gold);
+  color: var(--color-off-white-premium);
+  box-shadow: 0 10px 25px rgba(184, 146, 79, 0.22);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+.btn--outline {
+  border-color: var(--color-champagne-gold);
+  background-color: transparent;
+  color: var(--color-champagne-gold);
+
+  &:hover {
+    background-color: var(--color-champagne-gold);
+    color: var(--color-off-white-premium);
+  }
+}
+
+/* =========================================================
+   PLACEHOLDER IMAGENS
+   ========================================================= */
+
+.image-placeholder {
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: linear-gradient(135deg, rgba(234, 227, 216, 0.9), rgba(215, 199, 180, 0.75));
+
+  color: var(--color-natural-walnut);
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(110, 79, 58, 0.13);
+    border-radius: 50%;
+    content: '';
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    max-width: 240px;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+  }
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --header-height: 76px;
+    --spacing-section: 4.5rem;
+  }
+
+  .container {
+    width: min(calc(100% - 32px), var(--container-width));
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --spacing-section: 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+}
