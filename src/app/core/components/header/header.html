@@ -1,1 +1,109 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header__container container">
+    <a
+      class="header__brand"
+      routerLink="/"
+      aria-label="Ir para a página inicial da Clínica Barquez"
+      (click)="closeMenu()"
+    >
+      <img
+        class="header__logo"
+        src="/images/branding/logo-clinica-barquez.svg"
+        alt="Clínica Barquez"
+      />
+    </a>
+
+    <nav
+      id="main-navigation"
+      class="header__navigation"
+      [class.header__navigation--open]="isMenuOpen()"
+      aria-label="Navegação principal"
+    >
+      <a
+        class="header__link"
+        routerLink="/"
+        routerLinkActive="header__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        (click)="closeMenu()"
+      >
+        Início
+      </a>
+
+      <a
+        class="header__link"
+        routerLink="/sobre"
+        routerLinkActive="header__link--active"
+        ariaCurrentWhenActive="page"
+        (click)="closeMenu()"
+      >
+        Sobre Nós
+      </a>
+
+      <a
+        class="header__link"
+        routerLink="/servicos"
+        routerLinkActive="header__link--active"
+        ariaCurrentWhenActive="page"
+        (click)="closeMenu()"
+      >
+        Serviços
+      </a>
+
+      <a
+        class="header__link"
+        routerLink="/equipe"
+        routerLinkActive="header__link--active"
+        ariaCurrentWhenActive="page"
+        (click)="closeMenu()"
+      >
+        Equipe
+      </a>
+
+      <a
+        class="header__link"
+        routerLink="/contato"
+        routerLinkActive="header__link--active"
+        ariaCurrentWhenActive="page"
+        (click)="closeMenu()"
+      >
+        Contato
+      </a>
+
+      <a
+        class="header__appointment header__appointment--mobile"
+        routerLink="/contato"
+        (click)="closeMenu()"
+      >
+        Agende sua consulta
+      </a>
+    </nav>
+
+    <a class="header__appointment header__appointment--desktop" routerLink="/contato">
+      Agende sua consulta
+    </a>
+
+    <button
+      class="header__menu-button"
+      type="button"
+      [class.header__menu-button--active]="isMenuOpen()"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="main-navigation"
+      aria-label="Abrir ou fechar o menu"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  @if (isMenuOpen()) {
+    <button
+      class="header__overlay"
+      type="button"
+      aria-label="Fechar menu"
+      (click)="closeMenu()"
+    ></button>
+  }
+</header>

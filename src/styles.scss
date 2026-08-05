@@ -11,6 +11,30 @@
   --color-fendi: #d7c7b4;
   --color-natural-walnut: #6e4f3a;
   --color-champagne-gold: #b8924f;
+
+  --gradient-champagne: linear-gradient(
+    135deg,
+    #98743a 0%,
+    #b8924f 25%,
+    #d7b76b 50%,
+    #b8924f 75%,
+    #98743a 100%
+  );
+
+  --gradient-champagne-hover: linear-gradient(
+    135deg,
+    #7a5a2a 0%,
+    #936f3b 25%,
+    #b07a46 50%,
+    #936f3b 75%,
+    #7a5a2a 100%
+  );
+  --gradient-champagne-soft: linear-gradient(
+    135deg,
+    rgba(184, 146, 79, 0.08) 0%,
+    rgba(185, 146, 79, 0.18) 50%,
+    rgba(152, 116, 58, 0.22) 100%
+  );
   --color-matte-graphite: #2b2b2b;
   --color-sage-green: #a7b19d;
 
@@ -232,22 +256,23 @@ ol {
 }
 
 .btn--primary {
-  background-color: var(--color-champagne-gold);
+  background: var(--gradient-champagne);
   color: var(--color-off-white-premium);
   box-shadow: 0 10px 25px rgba(184, 146, 79, 0.22);
 
   &:hover {
-    background-color: var(--color-primary-hover);
+    background: var(--gradient-champagne-hover);
   }
 }
 
 .btn--outline {
   border-color: var(--color-champagne-gold);
-  background-color: transparent;
+  background: transparent;
   color: var(--color-champagne-gold);
 
   &:hover {
-    background-color: var(--color-champagne-gold);
+    background: var(--gradient-champagne);
+
     color: var(--color-off-white-premium);
   }
 }
@@ -311,4 +336,12 @@ ol {
   .section-title {
     font-size: clamp(2rem, 10vw, 2.75rem);
   }
+}
+
+body {
+  transition: overflow 0s;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
