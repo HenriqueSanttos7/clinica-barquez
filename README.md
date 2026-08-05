@@ -1,6 +1,6 @@
 # Clínica Barquez
 
-Site institucional da **Clínica Barquez**, desenvolvido em equipe pela **SIAH Software e Serviços**.
+Site institucional da **Clínica Barquez**, desenvolvido pela **SIAH Software e Serviços**.
 
 O projeto tem como objetivo apresentar a clínica, seus serviços, profissionais e canais de atendimento em uma interface moderna, acolhedora e responsiva.
 
@@ -50,10 +50,6 @@ Acesse:
 http://localhost:4200
 ```
 
-## Status
-
-Projeto em desenvolvimento.
-
 ## Desenvolvimento
 
-Desenvolvido em equipe pela **SIAH Software e Serviços** para a **Clínica Barquez**.
+Desenvolvido em equipe pela **SIAH Software e Serviços** para a **Clínica Barquez**
