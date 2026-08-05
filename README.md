@@ -1,59 +1,59 @@
-# ClinicaBarquez
+# Clínica Barquez
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+Site institucional da **Clínica Barquez**, desenvolvido em equipe pela **SIAH Software e Serviços**.
 
-## Development server
+O projeto tem como objetivo apresentar a clínica, seus serviços, profissionais e canais de atendimento em uma interface moderna, acolhedora e responsiva.
 
-To start a local development server, run:
+## Tecnologias
+
+- Angular
+- TypeScript
+- HTML
+- SCSS
+- Angular Router
+
+## Páginas
+
+- Início
+- Sobre Nós
+- Serviços
+- Equipe
+- Contato
+
+## Identidade visual
+
+O projeto utiliza uma paleta de cores terrosas, com detalhes em dourado champagne e verde-sálvia, buscando transmitir acolhimento, confiança e profissionalismo.
+
+As cores, tipografias, espaçamentos e demais configurações compartilhadas estão organizados em variáveis globais no arquivo:
+
+```text
+src/styles.scss
+```
+
+## Como executar
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Status
 
-```bash
-ng generate --help
-```
+Projeto em desenvolvimento.
 
-## Building
+## Desenvolvimento
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Desenvolvido em equipe pela **SIAH Software e Serviços** para a **Clínica Barquez**.
