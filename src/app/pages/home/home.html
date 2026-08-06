@@ -1,13 +1,68 @@
-<section class="section section--ivory">
-  <div class="container">
-    <span class="eyebrow">Clínica Barquez</span>
+<section class="hero">
+  <div class="hero__container container">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Bem-vindo à Clínica Barquez</span>
 
-    <h1 class="section-title">Cuidado humanizado para sua saúde e bem-estar</h1>
+      <h1 class="hero__title">
+        Cuidado Humanizado para sua Saúde e Bem-Estar
+      </h1>
 
-    <p class="section-description">
-      Atendimento acolhedor, profissionais especializados e cuidado personalizado em cada etapa.
-    </p>
+      <div class="hero__divider" aria-hidden="true">
+        <span></span>
+        <span>✦</span>
+      </div>
 
-    <a class="btn btn--primary" href="#agendamento"> Agende sua consulta </a>
+      <p class="hero__description">
+        Unimos excelência médica, tecnologia e atendimento humanizado para cuidar do que mais importa: você.
+      </p>
+
+      <a class="hero__button" routerLink="/contato">
+        Agende sua consulta
+      </a>
+
+      <div class="hero__benefits">
+        <div class="hero__benefit">
+          <span class="hero__benefit-icon" aria-hidden="true">♡</span>
+
+          <div>
+            <strong>Atendimento</strong>
+            <span>Humanizado</span>
+          </div>
+        </div>
+
+        <div class="hero__benefit">
+          <span class="hero__benefit-icon" aria-hidden="true">◇</span>
+
+          <div>
+            <strong>Segurança e</strong>
+            <span>Qualidade</span>
+          </div>
+        </div>
+
+        <div class="hero__benefit">
+          <span class="hero__benefit-icon" aria-hidden="true">❧</span>
+
+          <div>
+            <strong>Bem-estar em</strong>
+            <span>Primeiro lugar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__image-wrapper">
+  <picture>
+    <source
+      media="(max-width: 760px)"
+      srcset="/images/home/banner_clinica_900x650.png"
+    />
+
+    <img
+      class="hero__image"
+      src="/images/home/banner_clinica_900x400.png"
+      alt="Profissional da Clínica Barquez em ambiente clínico acolhedor"
+    />
+  </picture>
+</div>
   </div>
 </section>

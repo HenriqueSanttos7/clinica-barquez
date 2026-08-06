@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 
 /* =========================================================
    VARIÁVEIS GLOBAIS
@@ -14,11 +15,11 @@
 
   --gradient-champagne: linear-gradient(
     135deg,
-    #98743a 0%,
-    #b8924f 25%,
-    #d7b76b 50%,
-    #b8924f 75%,
-    #98743a 100%
+    #5c3d11 0%,
+    #8c6221 25%,
+    #a87a2d 50%,
+    #8c6221 75%,
+    #5c3d11 100%
   );
 
   --gradient-champagne-hover: linear-gradient(
@@ -338,10 +339,17 @@ ol {
   }
 }
 
-body {
-  transition: overflow 0s;
-}
-
 body.menu-open {
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
