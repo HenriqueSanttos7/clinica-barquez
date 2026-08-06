@@ -1,0 +1,356 @@
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--color-off-white-premium);
+}
+
+.hero__container {
+  display: grid;
+  width: 100%;
+  max-width: none;
+  min-height: clamp(560px, 64vh, 640px);
+  margin: 0;
+  padding: 0;
+  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: clamp(2.5rem, 4vw, 3.75rem) clamp(2rem, 3.5vw, 3.5rem) clamp(2.25rem, 3vw, 3rem)
+    max(24px, calc((100vw - var(--container-width)) / 2));
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -90px;
+    bottom: 0;
+
+    width: 180px;
+
+    border-radius: 0 50% 50% 0;
+    background-color: var(--color-off-white-premium);
+
+    content: '';
+    pointer-events: none;
+  }
+}
+
+.hero__eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-sage-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  max-width: 600px;
+  color: var(--color-natural-walnut);
+  font-size: clamp(2.75rem, 3.6vw, 3.9rem);
+  font-weight: 500;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.hero__divider {
+  display: flex;
+  width: min(100%, 290px);
+  margin-block: 1.15rem;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-champagne-gold);
+
+  span:first-child {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-champagne-gold);
+  }
+
+  span:last-child {
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+}
+
+.hero__description {
+  max-width: 500px;
+  margin-bottom: 1.35rem;
+  color: var(--color-text-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.hero__button {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.55rem;
+
+  border-radius: var(--radius-medium);
+  background: var(--gradient-champagne);
+  box-shadow: 0 12px 28px rgba(184, 146, 79, 0.22);
+
+  color: var(--color-off-white-premium);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
+
+  &:hover {
+    box-shadow: 0 16px 32px rgba(184, 146, 79, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(184, 146, 79, 0.3);
+    outline-offset: 3px;
+  }
+}
+
+.hero__benefits {
+  display: flex;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__benefit {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  &:not(:last-child) {
+    padding-right: 1rem;
+    border-right: 1px solid var(--color-border);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-soft);
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  strong {
+    color: var(--color-natural-walnut);
+    font-weight: 600;
+  }
+}
+
+.hero__benefit-icon {
+  flex-shrink: 0;
+  color: var(--color-sage-dark);
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.hero__image-wrapper {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(560px, 64vh, 640px);
+  overflow: hidden;
+  background-color: var(--color-ivory);
+}
+
+.hero__image-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+}
+
+/* Notebooks e tablets em modo paisagem */
+
+@media (max-width: 1100px) {
+  .hero__container {
+    min-height: 560px;
+    grid-template-columns: minmax(0, 47%) minmax(0, 53%);
+  }
+
+  .hero__content {
+    padding: 2.75rem 2rem 2.5rem max(24px, calc((100vw - var(--container-width)) / 2));
+
+    &::before {
+      right: -65px;
+      width: 130px;
+    }
+  }
+
+  .hero__title {
+    font-size: clamp(2.45rem, 4.2vw, 3.35rem);
+  }
+
+  .hero__image-wrapper {
+    min-height: 560px;
+  }
+
+  .hero__benefits {
+    gap: 0.8rem;
+  }
+
+  .hero__benefit {
+    &:not(:last-child) {
+      padding-right: 0.8rem;
+    }
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 760px) {
+  .hero {
+    overflow: visible;
+  }
+
+  .hero__container {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__image-wrapper {
+    order: 1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 900 / 650;
+  }
+
+  .hero__image-wrapper picture {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero__content {
+    order: 2;
+    padding: 2.75rem clamp(1.5rem, 6vw, 2rem) 3rem;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 1.15rem;
+    font-size: 0.8rem;
+  }
+
+  .hero__title {
+    max-width: 540px;
+    font-size: clamp(2.35rem, 10.5vw, 3.15rem);
+    line-height: 1.06;
+  }
+
+  .hero__divider {
+    width: min(100%, 300px);
+    margin-block: 1.5rem;
+  }
+
+  .hero__description {
+    max-width: 540px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero__button {
+    min-height: 52px;
+    padding-inline: 1.65rem;
+  }
+
+  .hero__benefits {
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .hero__benefit {
+    min-width: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border: 0;
+
+    &:not(:last-child) {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    div {
+      font-size: 0.66rem;
+    }
+  }
+
+  .hero__benefit-icon {
+    font-size: 1.45rem;
+  }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 420px) {
+  .hero__content {
+    padding: 2.5rem 1.4rem 2.75rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.2rem, 10.8vw, 2.75rem);
+  }
+
+  .hero__button {
+    width: fit-content;
+    font-size: 0.82rem;
+  }
+
+  .hero__benefits {
+    gap: 8px;
+  }
+
+  .hero__benefit {
+    div {
+      font-size: 0.62rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__button {
+    transition: none;
+  }
+}
