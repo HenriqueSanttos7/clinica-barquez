@@ -1,1 +1,139 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__container container">
+      <div class="footer__brand-column">
+        <a
+          class="footer__brand"
+          routerLink="/"
+          aria-label="Ir para a página inicial da Clínica Barquez"
+        >
+          <img
+            class="footer__logo"
+            src="/images/branding/logo-clinica-barquez-gold.svg"
+            alt="Clínica Barquez"
+          />
+        </a>
+
+        <p class="footer__description">
+          Cuidado humanizado, profissionais qualificados e atenção integral para sua saúde e
+          bem-estar.
+        </p>
+
+        <a class="footer__appointment" routerLink="/contato"> Agende sua consulta </a>
+      </div>
+
+      <div class="footer__column">
+        <h2 class="footer__title">Navegação</h2>
+
+        <nav class="footer__navigation" aria-label="Navegação do rodapé">
+          <a routerLink="/">Início</a>
+          <a routerLink="/sobre">Sobre Nós</a>
+          <a routerLink="/servicos">Serviços</a>
+          <a routerLink="/equipe">Equipe</a>
+          <a routerLink="/contato">Contato</a>
+        </nav>
+      </div>
+
+      <div class="footer__column">
+        <h2 class="footer__title">Serviços</h2>
+
+        <nav class="footer__navigation" aria-label="Serviços da clínica">
+          <a routerLink="/servicos">Clínica Médica</a>
+          <a routerLink="/servicos">Cardiologia</a>
+          <a routerLink="/servicos">Ginecologia</a>
+          <a routerLink="/servicos">Nutrição</a>
+          <a routerLink="/servicos">Psicologia</a>
+        </nav>
+      </div>
+
+      <div class="footer__column footer__contact">
+        <h2 class="footer__title">Entre em contato</h2>
+
+        <address class="footer__contact-list">
+          <a
+            class="footer__contact-item"
+            href="https://wa.me/5592981826512"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z" />
+              <path
+                d="M9 8.5c.4 2.5 2 4.1 4.5 5M9.2 8.4l1.2 1.8-.8 1
+        M13.5 13.5l1.1-.8 1.8 1.1"
+              />
+            </svg>
+
+            <span>
+              <strong>WhatsApp</strong>
+              (92) 98182-6512
+            </span>
+          </a>
+
+          <a class="footer__contact-item" href="mailto:contato@siahonline.com.br">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg>
+
+            <span>
+              <strong>E-mail</strong>
+              contato&#64;siahonline.com.br
+            </span>
+          </a>
+
+          <div class="footer__contact-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+
+            <span>
+              <strong>Endereço</strong>
+              Av. Cláudio Portinho, 365<br />
+              Miranda Mall, Bloco C, Salas 105, 106 e 107<br />
+              Manaus – AM
+            </span>
+          </div>
+        </address>
+
+        <div class="footer__socials" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram da Clínica Barquez">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" class="footer__social-dot" />
+            </svg>
+          </a>
+
+          <a href="#" aria-label="Facebook da Clínica Barquez">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1Z" />
+            </svg>
+          </a>
+
+          <a href="#" aria-label="WhatsApp da Clínica Barquez">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z" />
+              <path
+                d="M9 8.5c.4 2.5 2 4.1 4.5 5M9.2 8.4l1.2 1.8-.8 1
+                M13.5 13.5l1.1-.8 1.8 1.1"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="footer__bottom-container container">
+      <p>© {{ currentYear }} Clínica Barquez. Todos os direitos reservados.</p>
+
+      <p>
+        Desenvolvido pela
+        <strong>SIAH Software e Serviços</strong>
+      </p>
+    </div>
+  </div>
+</footer>
