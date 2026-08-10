@@ -1,1 +1,222 @@
-<p>contact works!</p>
+<section class="contact-hero">
+  <div class="contact-hero__container">
+    <div class="contact-hero__content">
+      <span class="contact-hero__eyebrow">Clínica Barquez</span>
+
+      <h1 class="contact-hero__title">Estamos aqui para cuidar de você</h1>
+
+      <div class="contact-hero__divider" aria-hidden="true">
+        <span></span>
+        <span>✦</span>
+      </div>
+
+      <p class="contact-hero__description">
+        Entre em contato com nossa equipe para tirar dúvidas, receber orientações e agendar seu
+        atendimento.
+      </p>
+
+      <a
+        class="contact-hero__button"
+        href="https://wa.me/5592981826512"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        Fale pelo WhatsApp
+      </a>
+    </div>
+
+    <div class="contact-hero__image-wrapper">
+      <picture>
+        <source media="(max-width: 760px)" srcset="/images/contact/banner-contato-mobile.jpg" />
+
+        <img
+          class="contact-hero__image"
+          src="/images/contact/banner-contato-desktop.jpg"
+          alt="Atendimento da Clínica Barquez"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-section__container container">
+    <div class="contact-section__info">
+      <span class="contact-section__eyebrow">Fale conosco</span>
+
+      <h2 class="contact-section__title">Será um prazer receber você</h2>
+
+      <p class="contact-section__description">
+        Nossa equipe está disponível para ajudar com informações sobre consultas, especialidades e
+        horários de atendimento.
+      </p>
+
+      <div class="contact-info">
+        <article class="contact-info__item">
+          <div class="contact-info__icon">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </div>
+
+          <div>
+            <span>WhatsApp</span>
+
+            <a href="https://wa.me/5592981826512" target="_blank" rel="noopener noreferrer">
+              (92) 98182-6512
+            </a>
+          </div>
+        </article>
+
+        <article class="contact-info__item">
+          <div class="contact-info__icon">
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          </div>
+
+          <div>
+            <span>E-mail</span>
+
+            <a href="mailto:contato@siahonline.com.br"> contato@siahonline.com.br </a>
+          </div>
+        </article>
+
+        <article class="contact-info__item">
+          <div class="contact-info__icon">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </div>
+
+          <div>
+            <span>Endereço</span>
+
+            <p>
+              Av. Cláudio Portinho, 365, Miranda Mall, Bloco C<br />
+              Salas 105, 106 e 107, Manaus – AM
+            </p>
+          </div>
+        </article>
+
+        <article class="contact-info__item">
+          <div class="contact-info__icon">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+          </div>
+
+          <div>
+            <span>Atendimento</span>
+
+            <p>
+              Segunda a sexta<br />
+              08h às 18h
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="contact-form-wrapper">
+      <div class="contact-form-wrapper__header">
+        <span>Agendamento</span>
+
+        <h2>Envie uma mensagem</h2>
+
+        <p>Preencha seus dados e nossa equipe entrará em contato.</p>
+      </div>
+
+      <form class="contact-form">
+        <div class="contact-form__field">
+          <label for="name">Nome completo</label>
+
+          <input id="name" type="text" name="name" placeholder="Digite seu nome" />
+        </div>
+
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label for="phone">Telefone</label>
+
+            <input id="phone" type="tel" name="phone" placeholder="(92) 99999-9999" />
+          </div>
+
+          <div class="contact-form__field">
+            <label for="email">E-mail</label>
+
+            <input id="email" type="email" name="email" placeholder="seu@email.com" />
+          </div>
+        </div>
+
+        <div class="contact-form__field">
+          <label for="subject">Assunto</label>
+
+          <select id="subject" name="subject">
+            <option value="">Selecione uma opção</option>
+            <option value="consulta">Agendar consulta</option>
+            <option value="informacoes">Informações</option>
+            <option value="especialidades">Especialidades</option>
+            <option value="outro">Outro assunto</option>
+          </select>
+        </div>
+
+        <div class="contact-form__field">
+          <label for="message">Mensagem</label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Como podemos ajudar?"
+          ></textarea>
+        </div>
+
+        <button class="contact-form__button" type="submit">
+          Enviar mensagem
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact-location">
+  <div class="contact-location__container container">
+    <div class="contact-location__header">
+      <span>Localização</span>
+
+      <h2>Venha nos visitar</h2>
+
+      <p>
+        Estamos em uma localização de fácil acesso para receber você com conforto e tranquilidade.
+      </p>
+    </div>
+
+    <div class="contact-location__map">
+      <div class="contact-location__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.9863725284204!2d-59.96730463037814!3d-3.1091242606732306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c04cfbf8d79d9%3A0xe53857e78365c63e!2sSIAH%20Software%20e%20Servi%C3%A7os!5e0!3m2!1spt-BR!2sbr!4v1786371637232!5m2!1spt-BR!2sbr"
+          title="Localização da Clínica Barquez"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta">
+  <div class="contact-cta__container container">
+    <div>
+      <span class="contact-cta__eyebrow"> Atendimento rápido e acolhedor </span>
+
+      <h2>Prefere falar diretamente com nossa equipe?</h2>
+
+      <p>Entre em contato pelo WhatsApp e receba atendimento de forma prática.</p>
+    </div>
+
+    <a
+      class="contact-cta__button"
+      href="https://wa.me/5592981826512"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      Chamar no WhatsApp
+    </a>
+  </div>
+</section>
