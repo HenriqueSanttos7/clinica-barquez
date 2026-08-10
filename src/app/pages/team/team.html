@@ -1,1 +1,185 @@
-<p>team works!</p>
+<section class="team-hero">
+  <div class="team-hero__container">
+    <div class="team-hero__content">
+      <span class="team-hero__eyebrow">Clínica Barquez</span>
+
+      <h1 class="team-hero__title">
+        Profissionais dedicados ao seu cuidado
+      </h1>
+
+      <div class="team-hero__divider" aria-hidden="true">
+        <span></span>
+        <span>✦</span>
+      </div>
+
+      <p class="team-hero__description">
+        Conheça os profissionais que fazem da Clínica Barquez um espaço de cuidado,
+        confiança e atendimento humanizado.
+      </p>
+
+      <a class="team-hero__button" routerLink="/contato">
+        Agende sua consulta
+      </a>
+    </div>
+
+    <div class="team-hero__image-wrapper">
+      <picture>
+        <source
+          media="(max-width: 760px)"
+          srcset="/images/team/banner-equipe-mobile.jpg"
+        />
+
+        <img
+          class="team-hero__image"
+          src="/images/team/banner-equipe-desktop.jpg"
+          alt="Equipe de profissionais da Clínica Barquez"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="team__container container">
+    <div class="team__header">
+      <span class="team__eyebrow">Nossa equipe</span>
+
+      <h2 class="team__title">
+        Cuidado feito por pessoas que acreditam em pessoas
+      </h2>
+
+      <p class="team__description">
+        Nossa equipe é formada por profissionais comprometidos com um atendimento
+        próximo, ético e acolhedor.
+      </p>
+    </div>
+
+    <div class="team__grid">
+      <article class="professional-card">
+        <div class="professional-card__image">
+          <img
+            src="/images/team/herdeson.jpg"
+            alt="Dr. Herdeson Queiroz"
+          />
+        </div>
+
+        <div class="professional-card__content">
+          <span class="professional-card__specialty">
+            Clínico Médico
+          </span>
+
+          <h3>Dr. Herdeson Queiroz</h3>
+
+          <div class="professional-card__divider"></div>
+
+          <p>
+            Atendimento clínico voltado ao cuidado integral da saúde,
+            acompanhamento, prevenção e bem-estar.
+          </p>
+
+          <a routerLink="/contato">
+            Agendar consulta
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="professional-card">
+        <div class="professional-card__image">
+          <img
+            src="/images/team/giully.jpg"
+            alt="Dra. Giully"
+          />
+        </div>
+
+        <div class="professional-card__content">
+          <span class="professional-card__specialty">
+            Clínica Médica
+          </span>
+
+          <h3>Dra. Giully</h3>
+
+          <div class="professional-card__divider"></div>
+
+          <p>
+            Atendimento humanizado e individualizado, com atenção às necessidades
+            e ao bem-estar de cada paciente.
+          </p>
+
+          <a routerLink="/contato">
+            Agendar consulta
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="team-values">
+  <div class="team-values__container container">
+    <article class="team-value">
+      <div class="team-value__icon">
+        <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+      </div>
+
+      <div>
+        <span>Cuidado</span>
+        <h3>Atendimento humanizado</h3>
+        <p>
+          Cada paciente é acolhido com atenção, respeito e escuta.
+        </p>
+      </div>
+    </article>
+
+    <article class="team-value">
+      <div class="team-value__icon">
+        <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+      </div>
+
+      <div>
+        <span>Confiança</span>
+        <h3>Profissionais qualificados</h3>
+        <p>
+          Conhecimento e responsabilidade em todas as etapas do atendimento.
+        </p>
+      </div>
+    </article>
+
+    <article class="team-value">
+      <div class="team-value__icon">
+        <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+      </div>
+
+      <div>
+        <span>Bem-estar</span>
+        <h3>Cuidado individualizado</h3>
+        <p>
+          Um atendimento pensado para as necessidades de cada pessoa.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="team-cta">
+  <div class="team-cta__container container">
+    <div>
+      <span class="team-cta__eyebrow">
+        Conte com nossa equipe
+      </span>
+
+      <h2>
+        Estamos prontos para cuidar de você.
+      </h2>
+
+      <p>
+        Entre em contato e agende seu atendimento na Clínica Barquez.
+      </p>
+    </div>
+
+    <a class="team-cta__button" routerLink="/contato">
+      Agende sua consulta
+    </a>
+  </div>
+</section>
