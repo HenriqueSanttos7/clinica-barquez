@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-declare const emailjs: any;
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -28,9 +27,8 @@ export class Contact {
 
     emailjs
       .send(
-  
-        'service_2859acd',
-        'template_6v6545p',
+        'service_lypag0a',
+        'template_xjzl88m',
         {
           nome: this.nome,
           telefone: this.telefone,
@@ -38,7 +36,9 @@ export class Contact {
           assunto: this.assunto,
           mensagem: this.mensagem,
         },
-        'TvuyFtTFoc6pz6KGh',
+        {
+          publicKey: 'UgyHVSuHokj-lbMjr',
+        },
       )
       .then(() => {
         alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
