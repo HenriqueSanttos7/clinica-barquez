@@ -17,7 +17,7 @@
 
       <a
         class="contact-hero__button"
-        href="https://wa.me/5592981826512"
+        href="https://wa.me/5592992680076"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -61,7 +61,7 @@
           <div>
             <span>WhatsApp</span>
 
-            <a href="https://wa.me/5592981826512" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5592992680076" target="_blank" rel="noopener noreferrer">
               (92) 98182-6512
             </a>
           </div>
@@ -129,28 +129,44 @@
             id="name"
             type="text"
             name="name"
-            [(ngModel)]
-            placeholder="Digite seu nome" />
+            [(ngModel)]="nome"
+            placeholder="Digite seu nome"
+            required
+          />
         </div>
 
         <div class="contact-form__row">
           <div class="contact-form__field">
             <label for="phone">Telefone</label>
 
-            <input id="phone" type="tel" name="phone" placeholder="(92) 99999-9999" />
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              [(ngModel)]="telefone"
+              placeholder="(92) 99999-9999"
+              required
+            />
           </div>
 
           <div class="contact-form__field">
             <label for="email">E-mail</label>
 
-            <input id="email" type="email" name="email" placeholder="seu@email.com" />
+            <input
+              id="email"
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="seu@email.com"
+              required
+            />
           </div>
         </div>
 
         <div class="contact-form__field">
           <label for="subject">Assunto</label>
 
-          <select id="subject" name="subject">
+          <select id="subject" name="subject" [(ngModel)]="assunto" required>
             <option value="">Selecione uma opção</option>
             <option value="consulta">Agendar consulta</option>
             <option value="informacoes">Informações</option>
@@ -165,14 +181,21 @@
           <textarea
             id="message"
             name="message"
+            [(ngModel)]="mensagem"
+            required
             rows="5"
             placeholder="Como podemos ajudar?"
           ></textarea>
         </div>
 
-        <button class="contact-form__button" type="submit">
-          Enviar mensagem
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        <button class="contact-form__button" type="submit" [disabled]="enviando">
+          @if (enviando) {
+            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            Enviando...
+          } @else {
+            Enviar mensagem
+            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+          }
         </button>
       </form>
     </div>
@@ -215,7 +238,7 @@
 
     <a
       class="contact-cta__button"
-      href="https://wa.me/5592981826512"
+      href="https://wa.me/5592992680076"
       target="_blank"
       rel="noopener noreferrer"
     >

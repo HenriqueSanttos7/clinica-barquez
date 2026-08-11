@@ -644,3 +644,11 @@
     width: 100%;
   }
 }
+
+.contact-form__button {
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
