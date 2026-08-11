@@ -120,11 +120,17 @@
         <p>Preencha seus dados e nossa equipe entrará em contato.</p>
       </div>
 
-      <form class="contact-form">
+      <!-- SESSÃO DO FORMULARIO -->
+      <form class="contact-form" (ngSubmit)="submit()">
         <div class="contact-form__field">
           <label for="name">Nome completo</label>
 
-          <input id="name" type="text" name="name" placeholder="Digite seu nome" />
+          <input
+            id="name"
+            type="text"
+            name="name"
+            [(ngModel)]
+            placeholder="Digite seu nome" />
         </div>
 
         <div class="contact-form__row">
@@ -186,15 +192,13 @@
     </div>
 
     <div class="contact-location__map">
-      <div class="contact-location__map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.9863725284204!2d-59.96730463037814!3d-3.1091242606732306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c04cfbf8d79d9%3A0xe53857e78365c63e!2sSIAH%20Software%20e%20Servi%C3%A7os!5e0!3m2!1spt-BR!2sbr!4v1786371637232!5m2!1spt-BR!2sbr"
-          title="Localização da Clínica Barquez"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"
-        ></iframe>
-      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.9863725284204!2d-59.96730463037814!3d-3.1091242606732306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c04cfbf8d79d9%3A0xe53857e78365c63e!2sSIAH%20Software%20e%20Servi%C3%A7os!5e0!3m2!1spt-BR!2sbr!4v1786371637232!5m2!1spt-BR!2sbr"
+        title="Localização da Clínica Barquez"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
     </div>
   </div>
 </section>
