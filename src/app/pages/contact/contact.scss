@@ -116,7 +116,6 @@
   width: fit-content;
   min-height: 50px;
 
-  margin-top: 1.8rem;
   padding: 0.8rem 1.5rem;
 
   align-items: center;
@@ -141,6 +140,24 @@
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-card);
+  }
+}
+
+.contact-hero__button--outline {
+  border: 1px solid var(--color-champagne-gold);
+
+  background: transparent;
+
+  color: var(--color-natural-walnut);
+
+  box-shadow: none;
+
+  &:hover {
+    background-color: rgba(184, 146, 79, 0.08);
+
+    box-shadow: none;
+
+    transform: translateY(-2px);
   }
 }
 
@@ -651,4 +668,15 @@
     cursor: not-allowed;
     transform: none;
   }
+}
+
+.contact-hero__actions {
+  display: flex;
+
+  margin-top: 1.8rem;
+
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
 }

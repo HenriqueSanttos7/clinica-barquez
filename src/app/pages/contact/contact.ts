@@ -17,6 +17,12 @@ export class Contact {
 
   enviando = false;
 
+  constructor() {
+    emailjs.init({
+      publicKey: 'KOoWwTKURfMZAfA8h',
+    });
+  }
+
   submit(): void {
     if (!this.nome || !this.telefone || !this.email || !this.assunto || !this.mensagem) {
       alert('Preencha todos os campos obrigatórios.');
@@ -26,31 +32,24 @@ export class Contact {
     this.enviando = true;
 
     emailjs
-      .send(
-        'service_lypag0a',
-        'template_xjzl88m',
-        {
-          nome: this.nome,
-          telefone: this.telefone,
-          email: this.email,
-          assunto: this.assunto,
-          mensagem: this.mensagem,
-        },
-        {
-          publicKey: 'UgyHVSuHokj-lbMjr',
-        },
-      )
+      .send('service_lypag0a', 'template_6aq3rre', {
+        nome: this.nome,
+        telefone: this.telefone,
+        email: this.email,
+        assunto: this.assunto,
+        mensagem: this.mensagem,
+      })
       .then(() => {
         alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
 
         this.limparFormulario();
       })
-      .catch((error: unknown) => {
+      .catch((error: any) => {
         console.error('Erro ao enviar formulário:', error);
+        console.error('Status:', error?.status);
+        console.error('Texto:', error?.text);
 
-        alert(
-          'Não foi possível enviar a mensagem. Tente novamente ou entre em contato pelo WhatsApp.',
-        );
+        alert(`Erro ${error?.status ?? ''}: ${error?.text ?? 'Não foi possível enviar.'}`);
       })
       .finally(() => {
         this.enviando = false;
