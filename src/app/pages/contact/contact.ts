@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 @Component({
@@ -32,9 +32,29 @@ export class Contact {
     });
   }
 
-  submit(): void {
-    if (!this.nome || !this.telefone || !this.email || !this.assunto || !this.mensagem) {
-      alert('Preencha todos os campos obrigatórios.');
+  formatarTelefone(event: Event): void {
+    const input = event.target as HTMLInputElement;
+
+    let numero = input.value.replace(/\D/g, '');
+
+    numero = numero.slice(0, 11);
+
+    if (numero.length <= 2) {
+      this.telefone = numero;
+    } else if (numero.length <= 6) {
+      this.telefone = `(${numero.slice(0, 2)}) ${numero.slice(2)}`;
+    } else if (numero.length <= 10) {
+      this.telefone = `(${numero.slice(0, 2)}) ${numero.slice(2, 6)}-${numero.slice(6)}`;
+    } else {
+      this.telefone = `(${numero.slice(0, 2)}) ${numero.slice(2, 7)}-${numero.slice(7)}`;
+    }
+
+    input.value = this.telefone;
+  }
+
+  submit(form: NgForm): void {
+    if (form.invalid) {
+      form.control.markAllAsTouched();
       return;
     }
 
@@ -52,11 +72,11 @@ export class Contact {
         alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
 
         this.limparFormulario();
+
+        form.resetForm();
       })
       .catch((error: any) => {
         console.error('Erro ao enviar formulário:', error);
-        console.error('Status:', error?.status);
-        console.error('Texto:', error?.text);
 
         alert(`Erro ${error?.status ?? ''}: ${error?.text ?? 'Não foi possível enviar.'}`);
       })

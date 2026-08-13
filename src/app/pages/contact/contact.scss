@@ -186,6 +186,27 @@
   object-position: center;
 }
 
+.contact-form__error {
+  display: block;
+
+  margin-top: 0.25rem;
+
+  color: #b42318;
+
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.contact-form__field {
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched {
+    border-color: #b42318;
+
+    box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.08);
+  }
+}
+
 /* =========================================================
    CONTATO
    ========================================================= */

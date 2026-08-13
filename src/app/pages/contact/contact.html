@@ -131,7 +131,7 @@
       </div>
 
       <!-- SESSÃO DO FORMULARIO -->
-      <form class="contact-form" (ngSubmit)="submit()">
+      <form class="contact-form" #contactForm="ngForm" (ngSubmit)="submit(contactForm)">
         <div class="contact-form__field">
           <label for="name">Nome completo</label>
 
@@ -140,9 +140,15 @@
             type="text"
             name="name"
             [(ngModel)]="nome"
+            #nameModel="ngModel"
             placeholder="Digite seu nome"
+            minlength="3"
             required
           />
+
+          @if (nameModel.invalid && nameModel.touched) {
+            <small class="contact-form__error"> Informe seu nome completo. </small>
+          }
         </div>
 
         <div class="contact-form__row">
@@ -154,9 +160,17 @@
               type="tel"
               name="phone"
               [(ngModel)]="telefone"
+              #phoneModel="ngModel"
               placeholder="(92) 99999-9999"
+              maxlength="15"
+              inputmode="numeric"
               required
+              (input)="formatarTelefone($event)"
             />
+
+            @if (phoneModel.invalid && phoneModel.touched) {
+              <small class="contact-form__error">Telefone inválido</small>
+            }
           </div>
 
           <div class="contact-form__field">
@@ -167,22 +181,42 @@
               type="email"
               name="email"
               [(ngModel)]="email"
+              #emailModel="ngModel"
               placeholder="seu@email.com"
               required
+              email
             />
+
+            @if (emailModel.errors?.['required'] && emailModel.touched) {
+              <small class="contact-form__error">E-mail é obrigatório</small>
+            }
+
+            @if (emailModel.errors?.['email'] && emailModel.touched) {
+              <small class="contact-form__error">E-mail inválido</small>
+            }
           </div>
         </div>
 
         <div class="contact-form__field">
           <label for="subject">Assunto</label>
 
-          <select id="subject" name="subject" [(ngModel)]="assunto" required>
+          <select
+            id="subject"
+            name="subject"
+            [(ngModel)]="assunto"
+            #subjectModel="ngModel"
+            required
+          >
             <option value="">Selecione uma opção</option>
             <option value="consulta">Agendar consulta</option>
             <option value="informacoes">Informações</option>
             <option value="especialidades">Especialidades</option>
             <option value="outro">Outro assunto</option>
           </select>
+
+          @if (subjectModel.invalid && subjectModel.touched) {
+            <small class="contact-form__error">Selecione um assunto</small>
+          }
         </div>
 
         <div class="contact-form__field">
@@ -192,19 +226,30 @@
             id="message"
             name="message"
             [(ngModel)]="mensagem"
+            #messageModel="ngModel"
             required
+            minlength="10"
             rows="5"
-            placeholder="Como podemos ajudar?"
+            placeholder="Como podemos lhe ajudar?"
           ></textarea>
+
+          @if (messageModel.invalid && messageModel.touched) {
+            <small class="contact-form__error"> Escreva uma mensagem com pelo menos 10 caracteres. </small>
+          }
         </div>
 
-        <button class="contact-form__button" type="submit" [disabled]="enviando">
+        <button
+          class="contact-form__button"
+          type="submit"
+          [disabled]="enviando"
+        >
           @if (enviando) {
             <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
             Enviando...
+
           } @else {
             Enviar mensagem
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           }
         </button>
       </form>
