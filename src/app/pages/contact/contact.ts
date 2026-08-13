@@ -23,6 +23,15 @@ export class Contact {
     });
   }
 
+  scrollToAgendamento(): void {
+    const agendamento = document.getElementById('agendamento');
+
+    agendamento?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+
   submit(): void {
     if (!this.nome || !this.telefone || !this.email || !this.assunto || !this.mensagem) {
       alert('Preencha todos os campos obrigatórios.');

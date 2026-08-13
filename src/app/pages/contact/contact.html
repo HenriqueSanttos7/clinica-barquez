@@ -28,10 +28,14 @@
           Fale pelo WhatsApp
         </a>
 
-        <a class="contact-hero__button contact-hero__button--outline" href="#agendamento">
+        <button
+          class="contact-hero__button contact-hero__button--outline"
+          type="button"
+          (click)="scrollToAgendamento()"
+        >
           <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
           Agendar consulta
-        </a>
+        </button>
       </div>
     </div>
 
@@ -111,10 +115,7 @@
           <div>
             <span>Atendimento</span>
 
-            <p>
-              Segunda a sexta<br />
-              08h às 18h
-            </p>
+            <p>Segunda a sexta | 08h às 18h</p>
           </div>
         </article>
       </div>
