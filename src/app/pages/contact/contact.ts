@@ -61,7 +61,7 @@ export class Contact {
     this.enviando = true;
 
     emailjs
-      .send('service_lypag0a', 'SEU_TEMPLATE_ID_CORRETO', {
+      .send('service_lypag0a', 'template_6aq3rre', {
         nome: this.nome,
         telefone: this.telefone,
         email: this.email,
