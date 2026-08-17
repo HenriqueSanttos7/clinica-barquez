@@ -331,4 +331,11 @@
     min-height: 58px;
     font-size: 1.15rem;
   }
+
+  .header__logo {
+    width: 200px;
+    max-height: 68px;
+    object-fit: contain;
+    object-position: left center;
+  }
 }

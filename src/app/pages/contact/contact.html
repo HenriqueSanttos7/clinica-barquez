@@ -130,51 +130,66 @@
         <p>Preencha seus dados e nossa equipe entrará em contato.</p>
       </div>
 
-      <!-- SESSÃO DO FORMULARIO -->
-      <form class="contact-form" #contactForm="ngForm" (ngSubmit)="submit(contactForm)">
+      <form
+        id="contact-form"
+        class="contact-form"
+        #contactForm="ngForm"
+        (ngSubmit)="submit(contactForm)"
+        novalidate
+      >
+        <!-- NOME -->
         <div class="contact-form__field">
-          <label for="name">Nome completo</label>
+          <label for="name"> Nome completo </label>
 
           <input
             id="name"
             type="text"
             name="name"
             [(ngModel)]="nome"
-            #nameModel="ngModel"
+            #nomeModel="ngModel"
             placeholder="Digite seu nome"
+            autocomplete="name"
             minlength="3"
             required
           />
 
-          @if (nameModel.invalid && nameModel.touched) {
+          @if (nomeModel.invalid && nomeModel.touched) {
             <small class="contact-form__error"> Informe seu nome completo. </small>
           }
         </div>
 
         <div class="contact-form__row">
+          <!-- TELEFONE -->
           <div class="contact-form__field">
-            <label for="phone">Telefone</label>
+            <label for="phone"> Telefone </label>
 
             <input
               id="phone"
               type="tel"
               name="phone"
               [(ngModel)]="telefone"
-              #phoneModel="ngModel"
+              #telefoneModel="ngModel"
               placeholder="(92) 99999-9999"
-              maxlength="15"
+              autocomplete="tel"
               inputmode="numeric"
-              required
+              maxlength="15"
+              [pattern]="telefonePattern"
               (input)="formatarTelefone($event)"
+              required
             />
 
-            @if (phoneModel.invalid && phoneModel.touched) {
-              <small class="contact-form__error">Telefone inválido</small>
+            @if (telefoneModel.errors?.['required'] && telefoneModel.touched) {
+              <small class="contact-form__error"> Informe seu telefone. </small>
+            }
+
+            @if (telefoneModel.errors?.['pattern'] && telefoneModel.touched) {
+              <small class="contact-form__error"> Informe o DDD e o número completo. </small>
             }
           </div>
 
+          <!-- E-MAIL -->
           <div class="contact-form__field">
-            <label for="email">E-mail</label>
+            <label for="email"> E-mail </label>
 
             <input
               id="email"
@@ -183,72 +198,135 @@
               [(ngModel)]="email"
               #emailModel="ngModel"
               placeholder="seu@email.com"
-              required
+              autocomplete="email"
               email
+              required
             />
 
             @if (emailModel.errors?.['required'] && emailModel.touched) {
-              <small class="contact-form__error">E-mail é obrigatório</small>
+              <small class="contact-form__error"> Informe seu e-mail. </small>
             }
 
             @if (emailModel.errors?.['email'] && emailModel.touched) {
-              <small class="contact-form__error">E-mail inválido</small>
+              <small class="contact-form__error"> Informe um e-mail válido. </small>
             }
           </div>
         </div>
 
+        <!-- ASSUNTO -->
         <div class="contact-form__field">
-          <label for="subject">Assunto</label>
+          <label for="subject"> Assunto </label>
 
           <select
             id="subject"
             name="subject"
             [(ngModel)]="assunto"
-            #subjectModel="ngModel"
+            #assuntoModel="ngModel"
             required
           >
-            <option value="">Selecione uma opção</option>
+            <option value="" disabled>Selecione uma opção</option>
+
             <option value="consulta">Agendar consulta</option>
+
             <option value="informacoes">Informações</option>
+
             <option value="especialidades">Especialidades</option>
+
             <option value="outro">Outro assunto</option>
           </select>
 
-          @if (subjectModel.invalid && subjectModel.touched) {
-            <small class="contact-form__error">Selecione um assunto</small>
+          @if (assuntoModel.invalid && assuntoModel.touched) {
+            <small class="contact-form__error"> Selecione um assunto. </small>
           }
         </div>
 
+        <!-- MENSAGEM -->
         <div class="contact-form__field">
-          <label for="message">Mensagem</label>
+          <label for="message"> Mensagem </label>
 
           <textarea
             id="message"
             name="message"
             [(ngModel)]="mensagem"
-            #messageModel="ngModel"
-            required
-            minlength="10"
+            #mensagemModel="ngModel"
             rows="5"
-            placeholder="Como podemos lhe ajudar?"
+            minlength="5"
+            maxlength="1000"
+            placeholder="Como podemos ajudar?"
+            required
           ></textarea>
 
-          @if (messageModel.invalid && messageModel.touched) {
-            <small class="contact-form__error"> Escreva uma mensagem com pelo menos 10 caracteres. </small>
+          @if (mensagemModel.invalid && mensagemModel.touched) {
+            <small class="contact-form__error">
+              Escreva uma mensagem com pelo menos 5 caracteres.
+            </small>
+          }
+
+          <span class="contact-form__counter"> {{ (mensagem ?? '').length }}/1000 </span>
+        </div>
+
+        <!-- PRIVACIDADE -->
+        <div class="contact-form__privacy">
+          <label>
+            <input
+              type="checkbox"
+              name="privacy"
+              [(ngModel)]="aceitouPrivacidade"
+              #privacyModel="ngModel"
+              required
+            />
+
+            <span>
+              Li e concordo com a
+              <a routerLink="/politica-de-privacidade" target="_blank"> Política de Privacidade </a>
+              e autorizo o uso dos meus dados para retorno sobre este atendimento.
+            </span>
+          </label>
+
+          @if (privacyModel.invalid && privacyModel.touched) {
+            <small class="contact-form__error">
+              Você precisa aceitar a Política de Privacidade para continuar.
+            </small>
           }
         </div>
 
-        <button
-          class="contact-form__button"
-          type="submit"
-          [disabled]="enviando"
-        >
+        <!-- STATUS -->
+        @if (statusEnvio === 'sucesso') {
+          <div
+            class="contact-form__status contact-form__status--success"
+            role="status"
+            aria-live="polite"
+          >
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+
+            <span>
+              {{ mensagemStatus }}
+            </span>
+          </div>
+        }
+
+        @if (statusEnvio === 'erro') {
+          <div
+            class="contact-form__status contact-form__status--error"
+            role="alert"
+            aria-live="assertive"
+          >
+            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+
+            <span>
+              {{ mensagemStatus }}
+            </span>
+          </div>
+        }
+
+        <button class="contact-form__button" type="submit" [disabled]="enviando">
           @if (enviando) {
             <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
-            Enviando...
 
+            Enviando...
           } @else {
             Enviar mensagem
+
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           }
         </button>
