@@ -19,7 +19,7 @@ export class Contact implements AfterViewInit {
   telefone = '';
   email = '';
   assunto = '';
-  mensagem: string | null = '';
+  mensagem = '';
   aceitouPrivacidade = false;
 
   enviando = false;
@@ -109,6 +109,7 @@ export class Contact implements AfterViewInit {
           email: this.email.trim(),
           assunto: this.assunto,
           mensagem: this.mensagem.trim(),
+          whatsapp_link: this.getWhatsappLink(),
         },
         {
           publicKey: environment.emailjs.publicKey,
@@ -177,5 +178,13 @@ export class Contact implements AfterViewInit {
     this.assunto = '';
     this.mensagem = '';
     this.aceitouPrivacidade = false;
+  }
+
+  private getWhatsappLink(): string {
+    const numero = (this.telefone ?? '').replace(/\D/g, '');
+
+    const mensagem = `Olá, ${this.nome}! Recebemos seu contato pelo site da Clínica Barquez.`;
+
+    return `https://wa.me/55${numero}?text=${encodeURIComponent(mensagem)}`;
   }
 }
