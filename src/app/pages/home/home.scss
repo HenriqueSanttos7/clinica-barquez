@@ -192,70 +192,10 @@
 }
 
 /* =========================================================
-   ELEMENTOS COMUNS
-   ========================================================= */
-
-.home-section__eyebrow {
-  display: inline-block;
-  margin-bottom: 0.75rem;
-
-  color: var(--color-sage-dark);
-
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.home-section__divider {
-  display: flex;
-  width: min(100%, 240px);
-  margin-block: 1.25rem;
-
-  align-items: center;
-  gap: 10px;
-
-  color: var(--color-champagne-gold);
-
-  span:first-child {
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-champagne-gold);
-  }
-
-  span:last-child {
-    flex-shrink: 0;
-  }
-}
-
-.home-link {
-  display: inline-flex;
-  width: fit-content;
-
-  align-items: center;
-  gap: 0.55rem;
-
-  color: var(--color-champagne-gold);
-
-  font-size: 0.82rem;
-  font-weight: 700;
-
-  transition:
-    gap var(--transition-default),
-    color var(--transition-default);
-
-  &:hover {
-    gap: 0.85rem;
-    color: var(--color-natural-walnut);
-  }
-}
-
-/* =========================================================
    SOBRE
    ========================================================= */
 
 .home-about {
-  padding-block: clamp(4.5rem, 7vw, 7rem);
   background-color: var(--color-ivory);
 }
 
@@ -288,12 +228,6 @@
 .home-about__content {
   h2 {
     max-width: 560px;
-
-    color: var(--color-natural-walnut);
-
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
-    font-weight: 500;
-    line-height: 1.08;
   }
 
   p {
@@ -308,7 +242,7 @@
     }
   }
 
-  .home-link {
+  .text-link {
     margin-top: 1.7rem;
   }
 }
@@ -318,7 +252,6 @@
    ========================================================= */
 
 .home-services {
-  padding-block: clamp(4.5rem, 7vw, 7rem);
   background-color: var(--color-off-white-premium);
 }
 
@@ -334,12 +267,6 @@
 
   h2 {
     max-width: 680px;
-
-    color: var(--color-natural-walnut);
-
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
-    font-weight: 500;
-    line-height: 1.08;
   }
 }
 
@@ -363,87 +290,25 @@
 
 .home-service-card {
   display: flex;
-
   min-height: 300px;
-
   padding: 1.75rem;
-
   flex-direction: column;
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-
-  background-color: var(--color-ivory);
-
-  transition:
-    transform var(--transition-default),
-    box-shadow var(--transition-default),
-    border-color var(--transition-default);
-
-  &:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(184, 146, 79, 0.35);
-
-    box-shadow: var(--shadow-card);
-  }
 
   h3 {
     margin: 1.3rem 0 0.65rem;
-
-    color: var(--color-natural-walnut);
-
     font-size: 1.5rem;
     font-weight: 500;
   }
 
   p {
     margin-bottom: 1.5rem;
-
-    color: var(--color-text-soft);
-
     font-size: 0.88rem;
     line-height: 1.65;
   }
 
   a {
-    display: inline-flex;
-
-    width: fit-content;
-
     margin-top: auto;
-
-    align-items: center;
-    gap: 0.5rem;
-
-    color: var(--color-champagne-gold);
-
-    font-size: 0.8rem;
-    font-weight: 700;
-
-    transition: gap var(--transition-default);
-
-    &:hover {
-      gap: 0.8rem;
-    }
   }
-}
-
-.home-service-card__icon {
-  display: grid;
-
-  width: 54px;
-  height: 54px;
-
-  place-items: center;
-
-  border-radius: 16px;
-
-  background-color: rgba(167, 177, 157, 0.18);
-
-  color: var(--color-sage-dark);
-
-  font-size: 1.25rem;
 }
 
 /* =========================================================
@@ -451,7 +316,6 @@
    ========================================================= */
 
 .home-team {
-  padding-block: clamp(4.5rem, 7vw, 7rem);
   background-color: var(--color-ivory);
 }
 
@@ -465,14 +329,6 @@
 }
 
 .home-team__intro {
-  h2 {
-    color: var(--color-natural-walnut);
-
-    font-size: clamp(2.4rem, 4vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.08;
-  }
-
   p {
     max-width: 470px;
 
@@ -481,7 +337,7 @@
     line-height: 1.7;
   }
 
-  .home-link {
+  .text-link {
     margin-top: 1.6rem;
   }
 }
@@ -541,7 +397,6 @@
 
   span {
     color: var(--color-sage-dark);
-
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -550,9 +405,7 @@
 
   h3 {
     margin-top: 0.25rem;
-
     color: var(--color-natural-walnut);
-
     font-size: 1.4rem;
     font-weight: 500;
   }
@@ -563,67 +416,33 @@
    ========================================================= */
 
 .home-differentials {
-  padding-block: clamp(4.5rem, 7vw, 7rem);
   background-color: var(--color-off-white-premium);
 }
 
 .home-differentials__header {
   max-width: 720px;
-
   margin: 0 auto clamp(2.8rem, 5vw, 4rem);
-
   text-align: center;
-
-  h2 {
-    color: var(--color-natural-walnut);
-
-    font-size: clamp(2.4rem, 4vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.08;
-  }
 }
 
 .home-differentials__grid {
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 1rem;
 }
 
 .home-differential {
   position: relative;
-
   min-height: 270px;
-
   padding: 1.5rem;
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-
-  background-color: var(--color-ivory);
-
-  transition:
-    transform var(--transition-default),
-    box-shadow var(--transition-default);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-small);
-  }
 
   h3 {
     margin: 1.2rem 0 0.5rem;
-
-    color: var(--color-natural-walnut);
-
     font-size: 1.2rem;
     font-weight: 500;
   }
 
   p {
-    color: var(--color-text-soft);
-
     font-size: 0.86rem;
     line-height: 1.6;
   }
@@ -1053,7 +872,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero__button,
-  .home-link,
+  .text-link,
   .home-service-card,
   .home-professional,
   .home-professional__image img,

@@ -229,6 +229,126 @@ ol {
 }
 
 /* =========================================================
+   SEÇÕES REUTILIZÁVEIS
+   ========================================================= */
+
+.section-space {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.section-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 0.75rem;
+
+  color: var(--color-sage-dark);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  color: var(--color-natural-walnut);
+
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.section-divider {
+  display: flex;
+
+  width: min(100%, 240px);
+
+  margin-block: 1.25rem;
+
+  align-items: center;
+  gap: 10px;
+
+  color: var(--color-champagne-gold);
+
+  span:first-child {
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-champagne-gold);
+  }
+
+  span:last-child {
+    flex-shrink: 0;
+  }
+}
+
+.text-link {
+  display: inline-flex;
+
+  width: fit-content;
+
+  align-items: center;
+  gap: 0.55rem;
+
+  color: var(--color-champagne-gold);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  transition:
+    gap var(--transition-default),
+    color var(--transition-default);
+
+  &:hover {
+    gap: 0.85rem;
+
+    color: var(--color-natural-walnut);
+  }
+}
+
+/* =========================================================
+   CARDS REUTILIZÁVEIS
+   ========================================================= */
+
+.surface-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-ivory);
+
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default),
+    border-color var(--transition-default);
+
+  &:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(184, 146, 79, 0.35);
+
+    box-shadow: var(--shadow-card);
+  }
+}
+
+.icon-box {
+  display: grid;
+
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  place-items: center;
+
+  border-radius: var(--radius-medium);
+
+  background-color: rgba(167, 177, 157, 0.18);
+
+  color: var(--color-sage-dark);
+
+  font-size: 1.25rem;
+}
+
+/* =========================================================
    BOTÕES ESTILIZAÇÃO
    ========================================================= */
 
@@ -340,6 +460,22 @@ ol {
 
   .section-title {
     font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-space {
+    padding-block: 4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-space {
+    padding-block: 3.5rem;
+  }
+
+  .section-heading {
+    font-size: 2.1rem;
   }
 }
 
