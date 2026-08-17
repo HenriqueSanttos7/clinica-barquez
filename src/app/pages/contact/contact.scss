@@ -701,3 +701,137 @@
 
   gap: 0.8rem;
 }
+
+#agendamento {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+/* =========================================================
+   VALIDAÇÃO
+   ========================================================= */
+
+.contact-form__error {
+  display: block;
+
+  color: #a33a32;
+
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.contact-form__field {
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched {
+    border-color: #a33a32;
+
+    box-shadow: 0 0 0 3px rgba(163, 58, 50, 0.08);
+  }
+}
+
+.contact-form__counter {
+  margin-left: auto;
+
+  color: var(--color-text-soft);
+
+  font-size: 0.7rem;
+}
+
+/* =========================================================
+   PRIVACIDADE
+   ========================================================= */
+
+.contact-form__privacy {
+  display: grid;
+
+  gap: 0.45rem;
+
+  label {
+    display: flex;
+
+    align-items: flex-start;
+    gap: 0.7rem;
+
+    color: var(--color-text-soft);
+
+    font-size: 0.78rem;
+    line-height: 1.55;
+
+    cursor: pointer;
+  }
+
+  input {
+    width: 17px;
+    height: 17px;
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+    accent-color: var(--color-champagne-gold);
+  }
+
+  a {
+    color: var(--color-champagne-gold);
+
+    font-weight: 600;
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: var(--color-natural-walnut);
+    }
+  }
+}
+
+/* =========================================================
+   STATUS DO ENVIO
+   ========================================================= */
+
+.contact-form__status {
+  display: flex;
+
+  padding: 1rem 1.1rem;
+
+  align-items: flex-start;
+  gap: 0.7rem;
+
+  border: 1px solid;
+  border-radius: 12px;
+
+  font-size: 0.82rem;
+  line-height: 1.5;
+
+  i {
+    margin-top: 2px;
+
+    flex-shrink: 0;
+  }
+}
+
+.contact-form__status--success {
+  border-color: rgba(87, 122, 80, 0.3);
+
+  background-color: rgba(167, 177, 157, 0.14);
+
+  color: #526a4d;
+}
+
+.contact-form__status--error {
+  border-color: rgba(163, 58, 50, 0.25);
+
+  background-color: rgba(163, 58, 50, 0.06);
+
+  color: #8b332c;
+}
+
+.contact-form__button {
+  &:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+  }
+}
