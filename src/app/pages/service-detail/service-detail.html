@@ -1,0 +1,109 @@
+@if (service) {
+  <section class="service-hero">
+    <div class="service-hero__container">
+      <div class="service-hero__content">
+        <span class="section-eyebrow"> Nossos serviços </span>
+
+        <h1>
+          {{ service.nome }}
+        </h1>
+
+        <div class="section-divider" aria-hidden="true">
+          <span></span>
+          <span>✦</span>
+        </div>
+
+        <p class="service-hero__subtitle">
+          {{ service.subtitulo }}
+        </p>
+
+        <p class="service-hero__description">
+          {{ service.descricao }}
+        </p>
+
+        <a
+          class="btn btn--primary"
+          routerLink="/contato"
+          [queryParams]="{
+            assunto: 'consulta',
+          }"
+        >
+          Agendar consulta
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="service-hero__image-wrapper">
+        <img class="service-hero__image" [src]="service.imagem" [alt]="service.nome" />
+      </div>
+    </div>
+  </section>
+
+  <section class="service-about section-space">
+    <div class="service-about__container container">
+      <div class="service-about__intro">
+        <span class="section-eyebrow"> Sobre o serviço </span>
+
+        <h2 class="section-heading">Cuidado pensado para cada paciente</h2>
+      </div>
+
+      <div class="service-about__text">
+        @for (paragraph of service.descricaoCompleta; track paragraph) {
+          <p>
+            {{ paragraph }}
+          </p>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="service-info section-space">
+    <div class="service-info__container container">
+      <article class="service-info__card">
+        <div class="icon-box">
+          <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+        </div>
+
+        <h2>Quando procurar atendimento?</h2>
+
+        <ul>
+          @for (item of service.indicacoes; track item) {
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              {{ item }}
+            </li>
+          }
+        </ul>
+      </article>
+
+      <article class="service-info__card">
+        <div class="icon-box">
+          <i [class]="service.icone" aria-hidden="true"></i>
+        </div>
+
+        <h2>Benefícios do acompanhamento</h2>
+
+        <ul>
+          @for (item of service.beneficios; track item) {
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              {{ item }}
+            </li>
+          }
+        </ul>
+      </article>
+    </div>
+  </section>
+
+} @else {
+  <section class="service-not-found container">
+    <h1>Serviço não encontrado</h1>
+
+    <p>O serviço solicitado não está disponível.</p>
+
+    <a routerLink="/servicos"> Ver todos os serviços </a>
+  </section>
+}

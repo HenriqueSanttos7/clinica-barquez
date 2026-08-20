@@ -13,6 +13,13 @@ export const routes: Routes = [
       import('./pages/services/services').then((component) => component.Services),
   },
   {
+    path: 'servicos/:slug',
+    loadComponent: () =>
+      import('./pages/service-detail/service-detail').then(
+        (m) => m.ServiceDetail
+      ),
+  },
+  {
     path: 'sobre',
     title: 'Sobre Nós | Clínica Barquez',
     loadComponent: () => import('./pages/about/about').then((component) => component.About),
@@ -29,6 +36,7 @@ export const routes: Routes = [
   },
   {
     path: 'politica-de-privacidade',
+    title: 'Política de Privacidade | Clínica Barquez',
     loadComponent: () =>
       import('./pages/privacy-policy/privacy-policy').then((m) => m.PrivacyPolicy),
   },

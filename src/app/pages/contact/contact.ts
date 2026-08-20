@@ -14,6 +14,7 @@ type StatusEnvio = 'sucesso' | 'erro' | null;
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
+
 export class Contact implements AfterViewInit {
   nome = '';
   telefone = '';
