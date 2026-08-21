@@ -1,12 +1,10 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-
 import emailjs from '@emailjs/browser';
-
 import { environment } from '../../../environments/environment';
-
 import { CLINIC_CONTACT } from '../../shared/data/clinic.data';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 type StatusEnvio = 'sucesso' | 'erro' | null;
 
@@ -24,6 +22,8 @@ export class Contact implements AfterViewInit {
   assunto = '';
   mensagem = '';
   aceitouPrivacidade = false;
+  
+  mapsEmbedUrl: SafeResourceUrl;
 
   enviando = false;
 
@@ -43,13 +43,20 @@ export class Contact implements AfterViewInit {
 
   private rolarParaAgendamento = false;
 
-  constructor(private readonly route: ActivatedRoute) {
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly sanitizer: DomSanitizer,
+  ){
     const assuntoParam = this.route.snapshot.queryParamMap.get('assunto');
 
     if (assuntoParam && this.assuntosValidos.has(assuntoParam)) {
       this.assunto = assuntoParam;
       this.rolarParaAgendamento = true;
     }
+
+    this.mapsEmbedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.clinicContact.mapsEmbedUrl,
+    );
   }
 
   ngAfterViewInit(): void {
