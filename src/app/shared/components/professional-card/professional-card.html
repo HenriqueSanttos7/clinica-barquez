@@ -1,0 +1,25 @@
+<article class="professional-card">
+  <div class="professional-card__image">
+    <img [src]="professional.imagem" [alt]="professional.nome" loading="lazy" />
+  </div>
+
+  <div class="professional-card__content">
+    <span class="professional-card__specialty">
+      {{ professional.especialidade }}
+    </span>
+
+    <h3 class="professional-card__name">
+      {{ professional.nome }}
+    </h3>
+
+    @if (professional.registro) {
+      <span class="professional-card__registration">
+        {{ professional.registro }}
+      </span>
+    }
+
+    <p class="professional-card__description">
+      {{ professional.descricao }}
+    </p>
+  </div>
+</article>

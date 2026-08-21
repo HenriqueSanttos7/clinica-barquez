@@ -158,27 +158,9 @@
     </div>
 
     <div class="home-team__grid">
-      <article class="home-professional">
-        <div class="home-professional__image">
-          <img src="/images/team/herdeson.webp" alt="Dr. Herdeson Queiroz" />
-        </div>
-
-        <div class="home-professional__content">
-          <span>Clínico Médico</span>
-          <h3>Dr. Herdeson Queiroz</h3>
-        </div>
-      </article>
-
-      <article class="home-professional">
-        <div class="home-professional__image">
-          <img src="/images/team/giully.webp" alt="Dra. Giully" />
-        </div>
-
-        <div class="home-professional__content">
-          <span>Clínica Médica</span>
-          <h3>Dra. Giully</h3>
-        </div>
-      </article>
+      @for (professional of professionalsDestaque; track professional.id) {
+        <app-professional-card [professional]="professional" />
+      }
     </div>
   </div>
 </section>

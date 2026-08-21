@@ -26,27 +26,9 @@
       </div>
 
       <div class="about-hero__cards">
-        <article class="doctor-card">
-          <div class="doctor-card__image">
-            <img src="/images/team/herdeson.webp" alt="Dr. Herdeson Queiroz" />
-          </div>
-
-          <div class="doctor-card__content">
-            <h3>Dr. Herdeson Queiroz</h3>
-            <span>Clínico Médico</span>
-          </div>
-        </article>
-
-        <article class="doctor-card">
-          <div class="doctor-card__image">
-            <img src="/images/team/giully.webp" alt="Dra. Giully" />
-          </div>
-
-          <div class="doctor-card__content">
-            <h3>Dra. Giully</h3>
-            <span>Clínica Médica</span>
-          </div>
-        </article>
+        @for (professional of professionals; track professional.id) {
+          <app-professional-card [professional]="professional" />
+        }
       </div>
     </div>
   </div>
@@ -57,9 +39,7 @@
     <div class="about-story__intro">
       <span class="about-story__eyebrow">Sobre nós</span>
 
-      <h2 class="about-story__title">
-        Cuidar de pessoas é a nossa essência
-      </h2>
+      <h2 class="about-story__title">Cuidar de pessoas é a nossa essência</h2>
 
       <div class="about-story__divider" aria-hidden="true">
         <span></span>
@@ -67,14 +47,13 @@
       </div>
 
       <p class="about-story__text">
-        A Clínica Barquez nasceu com o propósito de oferecer um atendimento
-        próximo, humano e de excelência, valorizando cada paciente de forma
-        individual.
+        A Clínica Barquez nasceu com o propósito de oferecer um atendimento próximo, humano e de
+        excelência, valorizando cada paciente de forma individual.
       </p>
 
       <p class="about-story__text">
-        Nossa proposta é unir cuidado, confiança e qualidade em um ambiente
-        acolhedor, com profissionais comprometidos com a saúde e o bem-estar.
+        Nossa proposta é unir cuidado, confiança e qualidade em um ambiente acolhedor, com
+        profissionais comprometidos com a saúde e o bem-estar.
       </p>
     </div>
 
@@ -88,10 +67,7 @@
           <span>Missão</span>
           <h3>Cuidado humanizado</h3>
 
-          <p>
-            Oferecer atendimento de saúde com acolhimento, respeito e atenção
-            individualizada.
-          </p>
+          <p>Oferecer atendimento de saúde com acolhimento, respeito e atenção individualizada.</p>
         </div>
       </article>
 
@@ -105,8 +81,8 @@
           <h3>Excelência em cada detalhe</h3>
 
           <p>
-            Ser referência em cuidado integrado, confiança e qualidade na
-            experiência de cada paciente.
+            Ser referência em cuidado integrado, confiança e qualidade na experiência de cada
+            paciente.
           </p>
         </div>
       </article>
@@ -121,8 +97,7 @@
           <h3>Ética, respeito e confiança</h3>
 
           <p>
-            Atuamos com responsabilidade, transparência e compromisso com o
-            bem-estar das pessoas.
+            Atuamos com responsabilidade, transparência e compromisso com o bem-estar das pessoas.
           </p>
         </div>
       </article>

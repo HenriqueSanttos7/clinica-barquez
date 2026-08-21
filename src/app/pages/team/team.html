@@ -46,56 +46,11 @@
     </div>
 
     <div class="team__grid">
-      <article class="professional-card">
-        <div class="professional-card__image">
-          <img src="/images/team/herdeson.webp" alt="Dr. Herdeson Queiroz" />
-        </div>
-
-        <div class="professional-card__content">
-          <span class="professional-card__specialty"> Clínico Médico </span>
-
-          <h3>Dr. Herdeson Queiroz</h3>
-          <h4>CRM 12345</h4>
-
-          <div class="professional-card__divider"></div>
-
-          <p>
-            Atendimento clínico voltado ao cuidado integral da saúde, acompanhamento, prevenção e
-            bem-estar.
-          </p>
-
-          <a routerLink="/contato">
-            Agendar consulta
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="professional-card">
-        <div class="professional-card__image">
-          <img src="/images/team/giully.webp" alt="Dra. Giully" />
-        </div>
-
-        <div class="professional-card__content">
-          <span class="professional-card__specialty"> Clínica Médica </span>
-
-          <h3>Dra. Giully Barbosa</h3>
-          <h4>CRM 12345</h4>
-
-          <div class="professional-card__divider"></div>
-
-          <p>
-            Atendimento humanizado e individualizado, com atenção às necessidades e ao bem-estar de
-            cada paciente.
-          </p>
-
-          <a routerLink="/contato">
-            Agendar consulta
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </article>
+      @for (professional of professionals; track professional.id) {
+        <app-professional-card [professional]="professional" />
+      }
     </div>
+    
   </div>
 </section>
 
