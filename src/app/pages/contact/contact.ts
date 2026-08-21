@@ -6,6 +6,8 @@ import emailjs from '@emailjs/browser';
 
 import { environment } from '../../../environments/environment';
 
+import { CLINIC_CONTACT } from '../../shared/data/clinic.data';
+
 type StatusEnvio = 'sucesso' | 'erro' | null;
 
 @Component({
@@ -27,6 +29,8 @@ export class Contact implements AfterViewInit {
 
   statusEnvio: StatusEnvio = null;
   mensagemStatus = '';
+
+  readonly clinicContact = CLINIC_CONTACT;
 
   readonly telefonePattern = '^\\([1-9]\\d\\) \\d{4,5}-\\d{4}$';
 

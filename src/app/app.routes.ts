@@ -13,7 +13,7 @@ export const routes: Routes = [
       import('./pages/services/services').then((component) => component.Services),
   },
   {
-    path: 'servicos/:slug',
+    path: 'servicos/:id',
     loadComponent: () =>
       import('./pages/service-detail/service-detail').then(
         (m) => m.ServiceDetail

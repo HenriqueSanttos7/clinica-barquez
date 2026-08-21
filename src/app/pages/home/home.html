@@ -113,53 +113,23 @@
     </div>
 
     <div class="home-services__grid">
-      <article class="home-service-card surface-card">
-        <div class="icon-box">
-          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
-        </div>
+      @for (service of servicesDestaque; track service.id) {
+        <article class="home-service-card surface-card">
+          <div class="icon-box">
+            <i [class]="service.icone" aria-hidden="true"></i>
+          </div>
 
-        <h3>Clínica Médica</h3>
+          <h3>{{ service.nome }}</h3>
 
-        <p>Avaliação clínica, prevenção e acompanhamento da saúde de forma individualizada.</p>
+          <p>{{ service.resumo }}</p>
 
-        <a routerLink="/servicos">
-          Saiba mais
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
+          <a class="text-link" [routerLink]="['/servicos', service.id]">
+            Saiba mais
 
-      <article class="home-service-card surface-card">
-        <div class="icon-box">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-        </div>
-
-        <h3>Cardiologia</h3>
-
-        <p>
-          Cuidado e acompanhamento da saúde cardiovascular com atenção à prevenção e qualidade de
-          vida.
-        </p>
-
-        <a routerLink="/servicos">
-          Saiba mais
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
-
-      <article class="home-service-card surface-card">
-        <div class="icon-box">
-          <i class="fa-solid fa-apple-whole" aria-hidden="true"></i>
-        </div>
-
-        <h3>Nutrição</h3>
-
-        <p>Orientação alimentar personalizada para promover saúde, equilíbrio e bem-estar.</p>
-
-        <a routerLink="/servicos">
-          Saiba mais
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+      }
     </div>
   </div>
 </section>
