@@ -283,6 +283,45 @@
   }
 }
 
+.service-hero__back {
+  position: absolute;
+
+  top: 2rem;
+  left: max(24px, calc((100vw - var(--container-width)) / 2));
+
+  display: grid;
+
+  width: 44px;
+  height: 44px;
+
+  place-items: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background-color: var(--color-ivory);
+
+  color: var(--color-natural-walnut);
+
+  font-size: 0.9rem;
+
+  transition:
+    transform var(--transition-default),
+    border-color var(--transition-default),
+    background-color var(--transition-default),
+    color var(--transition-default);
+
+  &:hover {
+    transform: translateX(-3px);
+
+    border-color: var(--color-champagne-gold);
+
+    background-color: var(--color-champagne-gold);
+
+    color: var(--color-off-white-premium);
+  }
+}
+
 /* =========================================================
    RESPONSIVIDADE
    ========================================================= */
@@ -312,8 +351,7 @@
 
   .service-hero__content {
     order: 2;
-
-    padding: 3.5rem 24px;
+    padding: 6.5rem 24px 3.5rem;
 
     &::after {
       display: none;
@@ -322,6 +360,14 @@
     h1 {
       font-size: clamp(2.5rem, 11vw, 3.5rem);
     }
+  }
+
+  .service-hero__back {
+    top: 1.25rem;
+    left: 24px;
+
+    width: 40px;
+    height: 40px;
   }
 
   .service-info__container {

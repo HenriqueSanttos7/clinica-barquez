@@ -13,7 +13,7 @@ export class ServiceDetail {
   service?: Service;
 
   constructor(private readonly route: ActivatedRoute) {
-    const slug = this.route.snapshot.paramMap.get('slug');
-    this.service = SERVICES.find((service) => service.slug === slug);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.service = SERVICES.find((service) => service.id === id);
   }
 }

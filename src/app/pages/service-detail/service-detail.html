@@ -2,6 +2,15 @@
   <section class="service-hero">
     <div class="service-hero__container">
       <div class="service-hero__content">
+        <a
+          class="service-hero__back"
+          routerLink="/servicos"
+          aria-label="Voltar para todos os serviços"
+          title="Voltar para serviços"
+        >
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
         <span class="section-eyebrow"> Nossos serviços </span>
 
         <h1>
@@ -18,7 +27,7 @@
         </p>
 
         <p class="service-hero__description">
-          {{ service.descricao }}
+          {{ service.resumo }}
         </p>
 
         <a
@@ -51,6 +60,7 @@
       <div class="service-about__text">
         @for (paragraph of service.descricaoCompleta; track paragraph) {
           <p>
+            <span aria-hidden="true" style="color: #9c7a0b; font-weight: 700">✦</span>
             {{ paragraph }}
           </p>
         }
@@ -97,7 +107,6 @@
       </article>
     </div>
   </section>
-
 } @else {
   <section class="service-not-found container">
     <h1>Serviço não encontrado</h1>
