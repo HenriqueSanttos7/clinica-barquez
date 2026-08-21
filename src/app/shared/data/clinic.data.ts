@@ -19,7 +19,7 @@ export interface ClinicContact {
 
 export const CLINIC_CONTACT: ClinicContact = {
   whatsappDisplay: '(92) 98182-6512',
-  whatsappUrl: 'https://wa.me/5592981826512',
+  whatsappUrl: 'https://wa.me/5592981826512?text=Olá%2C%20vim%20pelo%20site%20da%20Clínica%20Barquez.',
 
   instagram: 'clinica.barquez',
   facebook: 'https://www.facebook.com/clinica.barquez',
