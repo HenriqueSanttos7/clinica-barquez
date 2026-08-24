@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Service, SERVICES } from '../../shared/data/services.data';
+import { SERVICES } from '../../shared/data/services.data';
+import { Service } from '../../shared/models/service.models';
+
 
 @Component({
   selector: 'app-service-detail',
