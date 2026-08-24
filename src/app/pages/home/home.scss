@@ -52,8 +52,8 @@
 .hero__eyebrow {
   margin-bottom: 0.75rem;
   color: var(--color-sage-dark);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
@@ -62,7 +62,7 @@
   max-width: 600px;
   color: var(--color-natural-walnut);
   font-size: clamp(2.75rem, 3.6vw, 3.9rem);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.04;
   text-wrap: balance;
 }
@@ -83,7 +83,7 @@
 
   span:last-child {
     flex-shrink: 0;
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -91,8 +91,8 @@
   max-width: 500px;
   margin-bottom: 1.35rem;
   color: var(--color-text-soft);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .hero__button {
@@ -109,8 +109,8 @@
   box-shadow: 0 12px 28px rgba(184, 146, 79, 0.22);
 
   color: var(--color-off-white-premium);
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-align: center;
   text-transform: uppercase;
 
@@ -150,21 +150,21 @@
     display: flex;
     flex-direction: column;
     color: var(--color-text-soft);
-    font-size: 0.78rem;
-    line-height: 1.35;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-snug);
   }
 
   strong {
     color: var(--color-natural-walnut);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
   }
 }
 
 .hero__benefit-icon {
   flex-shrink: 0;
   color: var(--color-sage-dark);
-  font-size: 1.9rem;
-  line-height: 1;
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-base);
 }
 
 .hero__image-wrapper {
@@ -264,7 +264,7 @@
 .home-section__header-side {
   p {
     margin-bottom: 1rem;
-    line-height: 1.7;
+    line-height: var(--line-height-normal);
   }
 }
 
@@ -284,14 +284,14 @@
 
   h3 {
     margin: 1.3rem 0 0.65rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 500;
   }
 
   p {
     margin-bottom: 1.5rem;
-    font-size: 0.88rem;
-    line-height: 1.65;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-normal);
   }
 
   a {
@@ -317,7 +317,7 @@
 .home-team__intro {
   p {
     max-width: 470px;
-    line-height: 1.7;
+    line-height: var(--line-height-normal);
   }
 
   .text-link {
@@ -358,13 +358,13 @@
 
   h3 {
     margin: 1.2rem 0 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
-    font-size: 0.86rem;
-    line-height: 1.6;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
   }
 }
 
@@ -378,7 +378,7 @@
 
   font-family: var(--font-heading);
 
-  font-size: 1rem;
+  font-size: var(--font-size-md);
 }
 
 .home-differential__icon {
@@ -389,13 +389,13 @@
 
   place-items: center;
 
-  border-radius: 16px;
+  border-radius: var(--radius-medium);
 
   background-color: rgba(167, 177, 157, 0.18);
 
   color: var(--color-sage-dark);
 
-  font-size: 1.2rem;
+  font-size: var(--font-size-xl);
 }
 
 // CTA FINAL
@@ -425,8 +425,8 @@
 
     color: var(--color-champagne-gold);
 
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
@@ -437,8 +437,8 @@
     color: var(--color-off-white-premium);
 
     font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.08;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
   }
 
   p {
@@ -448,7 +448,7 @@
 
     color: rgba(244, 241, 236, 0.72);
 
-    line-height: 1.65;
+    line-height: var(--line-height-normal);
   }
 }
 
@@ -479,8 +479,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   transition:
@@ -497,7 +497,7 @@
 .home-cta__link {
   color: rgba(244, 241, 236, 0.78);
 
-  font-size: 0.82rem;
+  font-size: var(--font-size-sm);
 
   transition: color var(--transition-default);
 
