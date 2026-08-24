@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Professional } from '../../data/professionals.data';
+import { Professional } from '../../models/professional.models';
 
 @Component({
   selector: 'app-professional-card',

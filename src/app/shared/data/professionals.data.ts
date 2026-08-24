@@ -1,15 +1,6 @@
-export interface Professional {
-  id: string;
-  nome: string;
-  titulo: string;
-  especialidade: string;
-  registro?: string;
-  descricao: string;
-  imagem: string;
-  destaqueHome?: boolean;
-}
+import { Professional } from '../models/professional.models';
 
-export const PROFESSIONALS: Professional[] = [
+export const PROFESSIONALS_DATA: Professional[] = [
   {
     id: 'herdeson',
     nome: 'Dr. Herdeson Queiroz',
@@ -26,7 +17,7 @@ export const PROFESSIONALS: Professional[] = [
     id: 'giully',
     nome: 'Dra. Giully Barbosa',
     titulo: 'Médica',
-    especialidade: 'Pediatria',
+    especialidade: 'Nutrição',
     registro: 'CRM 00000-AM',
     descricao:
       'Atendimento acolhedor e individualizado, com atenção às necessidades de cada paciente.',

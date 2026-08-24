@@ -1,17 +1,4 @@
-export interface Service {
-  id: string;
-  nome: string;
-  resumo: string;
-  subtitulo: string;
-  descricaoCompleta: string[];
-  indicacoes: string[];
-  beneficios: string[];
-  icone: string;
-  imagem: string;
-
-  destaqueHome?: boolean;
-}
-
+import { Service } from '../models/service.models';
 export const SERVICES: Service[] = [
   {
     id: 'clinica-medica',

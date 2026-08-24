@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { PROFESSIONALS } from '../../shared/data/professionals.data';
+import { PROFESSIONALS_DATA } from '../../shared/data/professionals.data';
 import { ProfessionalCard } from '../../shared/components/professional-card/professional-card';
 
 @Component({
@@ -12,5 +12,5 @@ import { ProfessionalCard } from '../../shared/components/professional-card/prof
 })
 
 export class Team {
-  readonly professionals = PROFESSIONALS;
+  readonly professionals = PROFESSIONALS_DATA;
 }
