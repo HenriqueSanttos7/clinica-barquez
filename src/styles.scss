@@ -64,13 +64,6 @@
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', Arial, sans-serif;
 
-  /* Tamanhos de texto */
-  --font-size-tiny: 0.75rem;
-  --font-size-small: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-medium: 1.125rem;
-  --font-size-large: 1.5rem;
-
   /* Tamanhos de Fonte (Font-Size) */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -120,7 +113,7 @@
   --shadow-small: 0 8px 24px rgba(78, 53, 36, 0.06);
   --shadow-card: 0 16px 45px rgba(78, 53, 36, 0.09);
   --shadow-header: 0 5px 25px rgba(78, 53, 36, 0.05);
-  --shadow-botton: 0 14px 30px rgba(0, 0, 0, 0.2);
+  --shadow-botton: 0 14px 30px rgba(0, 0, 0, 0.39);
 
   /* Animações */
   --transition-fast: 160ms ease;

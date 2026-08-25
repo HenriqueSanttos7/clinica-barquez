@@ -63,8 +63,8 @@
 
   color: var(--color-sage-dark);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -75,8 +75,8 @@
   color: var(--color-natural-walnut);
 
   font-size: clamp(2.8rem, 5vw, 4.6rem);
-  font-weight: 500;
-  line-height: 1.05;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 
   text-wrap: balance;
 }
@@ -106,8 +106,8 @@
 
   color: var(--color-text-soft);
 
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .contact-hero__button {
