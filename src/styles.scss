@@ -81,11 +81,12 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
   --font-size-5xl: 3rem;
+  --font-tittle: clamp(2.4rem, 4vw, 3.6rem);
 
   /* Alturas de Linha (Line-Heights) */
   --line-height-tight: 1.15;
   --line-height-snug: 1.3;
-  --line-height-normal: 1.6;
+  --line-height-normal: 1.7;
   --line-height-base: 1.08;
 
   /* Pesos de Font (Fonte-Weight */
@@ -119,6 +120,7 @@
   --shadow-small: 0 8px 24px rgba(78, 53, 36, 0.06);
   --shadow-card: 0 16px 45px rgba(78, 53, 36, 0.09);
   --shadow-header: 0 5px 25px rgba(78, 53, 36, 0.05);
+  --shadow-botton: 0 14px 30px rgba(0, 0, 0, 0.2);
 
   /* Animações */
   --transition-fast: 160ms ease;

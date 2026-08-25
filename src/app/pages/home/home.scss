@@ -222,13 +222,8 @@
 }
 
 .home-about__content {
-  h2 {
-    max-width: 560px;
-  }
-
   p {
-    max-width: 550px;
-    line-height: 1.75;
+    line-height: var(--line-height-normal);
 
     & + p {
       margin-top: 1rem;
@@ -258,6 +253,8 @@
 
   h2 {
     max-width: 680px;
+    font-size: var(--font-tittle);
+    font-weight: var(--font-weight-medium);
   }
 }
 
@@ -284,8 +281,8 @@
 
   h3 {
     margin: 1.3rem 0 0.65rem;
-    font-size: 1.7rem;
-    font-weight: 500;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
@@ -315,8 +312,12 @@
 }
 
 .home-team__intro {
+  h2 {
+    font-size: var(--font-tittle);
+    font-weight: var(--font-weight-medium);
+  }
+
   p {
-    max-width: 470px;
     line-height: var(--line-height-normal);
   }
 
@@ -337,6 +338,11 @@
 
 .home-differentials {
   background-color: var(--color-off-white-premium);
+
+  h2 {
+    font-size: var(--font-tittle);
+    font-weight: var(--font-weight-medium);
+  }
 }
 
 .home-differentials__header {
@@ -374,53 +380,20 @@
   top: 1.3rem;
   right: 1.3rem;
 
-  color: rgba(110, 79, 58, 0.18);
-
+  color: var(--color-sage-dark);
   font-family: var(--font-heading);
-
   font-size: var(--font-size-md);
 }
 
-.home-differential__icon {
-  display: grid;
-
-  width: 52px;
-  height: 52px;
-
-  place-items: center;
-
-  border-radius: var(--radius-medium);
-
-  background-color: rgba(167, 177, 157, 0.18);
-
-  color: var(--color-sage-dark);
-
-  font-size: var(--font-size-xl);
-}
-
 // CTA FINAL
-
 .home-cta {
   background-color: var(--color-walnut-dark);
-}
-
-.home-cta__container {
-  display: flex;
-
-  min-height: 310px;
-
-  padding-block: 4rem;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 4rem;
 }
 
 .home-cta__content {
   span {
     display: block;
-
+    padding-top: 50px;
     margin-bottom: 0.65rem;
 
     color: var(--color-champagne-gold);
@@ -429,80 +402,25 @@
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-align: center;
   }
 
   h2 {
-    max-width: 650px;
-
     color: var(--color-off-white-premium);
 
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-size: var(--font-tittle);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-base);
+    text-align: center;
   }
 
   p {
-    max-width: 620px;
-
     margin-top: 0.85rem;
 
-    color: rgba(244, 241, 236, 0.72);
+    color: var(--color-off-white-premium);
 
     line-height: var(--line-height-normal);
-  }
-}
-
-.home-cta__actions {
-  display: flex;
-
-  flex-shrink: 0;
-
-  flex-direction: column;
-  align-items: center;
-
-  gap: 0.9rem;
-}
-
-.home-cta__button {
-  display: inline-flex;
-
-  min-height: 52px;
-
-  padding: 0.85rem 1.6rem;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: var(--radius-medium);
-
-  background: var(--gradient-champagne);
-
-  color: var(--color-off-white-premium);
-
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-
-  transition:
-    transform var(--transition-default),
-    box-shadow var(--transition-default);
-
-  &:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.home-cta__link {
-  color: rgba(244, 241, 236, 0.78);
-
-  font-size: var(--font-size-sm);
-
-  transition: color var(--transition-default);
-
-  &:hover {
-    color: var(--color-off-white-premium);
+    text-align: center;
   }
 }
 
@@ -526,7 +444,7 @@
   }
 
   .hero__title {
-    font-size: clamp(2.45rem, 4.2vw, 3.35rem);
+    font-size: var(--font-tittle);
   }
 
   .hero__image-wrapper {
@@ -575,10 +493,6 @@
   .home-section__header {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  .home-team__intro {
-    max-width: 620px;
   }
 
   .home-cta__container {
@@ -638,13 +552,13 @@
 
   .hero__eyebrow {
     margin-bottom: 1.15rem;
-    font-size: 0.8rem;
+    font-size: var(--font-size-sm);
   }
 
   .hero__title {
     max-width: 540px;
     font-size: clamp(2.35rem, 10.5vw, 3.15rem);
-    line-height: 1.06;
+    line-height: var(--line-height-base);
   }
 
   .hero__divider {
@@ -655,8 +569,8 @@
   .hero__description {
     max-width: 540px;
     margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
   }
 
   .hero__button {
@@ -692,12 +606,12 @@
     }
 
     div {
-      font-size: 0.8rem;
+      font-size: var(--font-size-sm);
     }
   }
 
   .hero__benefit-icon {
-    font-size: 2.2rem;
+    font-size: var(--font-size-5xl);
   }
 }
 
@@ -749,7 +663,7 @@
 
   .hero__button {
     width: fit-content;
-    font-size: 0.82rem;
+    font-size: var(--font-size-sm);
   }
 
   .hero__benefits {
@@ -758,7 +672,7 @@
 
   .hero__benefit {
     div {
-      font-size: 0.62rem;
+      font-size: var(--font-size-xs);
     }
   }
 }
