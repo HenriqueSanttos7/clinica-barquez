@@ -63,13 +63,13 @@
 .services-cta__eyebrow {
   display: inline-block;
 
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-sm);
 
   color: var(--color-sage-dark);
 
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -78,9 +78,9 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.8rem, 5vw, 4.6rem);
-  font-weight: 500;
-  line-height: 1.05;
+  font-size: var(--font-fluid-hero);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 
   text-wrap: balance;
 }
@@ -110,8 +110,8 @@
 
   color: var(--color-text-soft);
 
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .services-hero__image-wrapper {
@@ -168,15 +168,15 @@
   color: var(--color-natural-walnut);
 
   font-size: clamp(2.3rem, 4vw, 3.5rem);
-  font-weight: 500;
-  line-height: 1.08;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 }
 
 .services__description {
   color: var(--color-text-soft);
 
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .services__grid {
@@ -228,17 +228,17 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
 
     color: var(--color-text-soft);
 
-    font-size: 0.88rem;
-    line-height: 1.65;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
   }
 
   a {
@@ -253,8 +253,8 @@
 
     color: var(--color-champagne-gold);
 
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
 
     transition:
       gap var(--transition-default),
@@ -275,13 +275,13 @@
 
   place-items: center;
 
-  border-radius: 16px;
+  border-radius: var(--radius-medium);
 
   background-color: rgba(167, 177, 157, 0.2);
 
   color: var(--color-sage-dark);
 
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl);
 }
 
 /* =========================================================
@@ -309,9 +309,9 @@
 
     color: var(--color-off-white-premium);
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 500;
-    line-height: 1.1;
+    font-size: var(--font-fluid-title-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
   }
 
   p {
@@ -321,7 +321,7 @@
 
     color: rgba(244, 241, 236, 0.7);
 
-    font-size: 0.95rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -347,8 +347,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
 
   text-transform: uppercase;
 
@@ -423,7 +423,7 @@
   }
 
   .services-hero__description {
-    font-size: 0.95rem;
+    font-size: var(--font-size-md);
   }
 
   .services__header {
@@ -581,7 +581,7 @@
   .service-card h3 {
     margin-top: 1.2rem;
 
-    font-size: 1.4rem;
+    font-size: var(--font-size-2xl);
   }
 
   .services-cta__container {
@@ -600,11 +600,11 @@
   }
 
   .services-hero__title {
-    font-size: 2.15rem;
+    font-size: var(--font-size-4xl);
   }
 
   .services-hero__description {
-    font-size: 0.92rem;
+    font-size: var(--font-size-md);
   }
 
   .services {

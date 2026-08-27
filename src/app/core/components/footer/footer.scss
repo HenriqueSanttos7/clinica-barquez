@@ -70,17 +70,17 @@ s:host {
 
 .footer__description {
   max-width: 340px;
-  margin-top: 1.5rem;
+  margin-top: var(--spacing-lg);
 
   color: rgba(244, 241, 236, 0.78);
-  font-size: 0.94rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .footer__appointment {
   display: inline-flex;
   min-height: 48px;
-  margin-top: 1.5rem;
+  margin-top: var(--spacing-lg);
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.4rem;
@@ -90,8 +90,8 @@ s:host {
   background: var(--gradient-champagne);
 
   color: var(--color-off-white-premium);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   transition:
@@ -111,8 +111,8 @@ s:host {
 
   color: var(--color-off-white-premium);
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
 
   &::after {
     position: absolute;
@@ -137,7 +137,7 @@ s:host {
 
   a {
     color: rgba(244, 241, 236, 0.76);
-    font-size: 0.9rem;
+    font-size: var(--font-size-md);
 
     transition:
       color var(--transition-default),
@@ -164,8 +164,8 @@ s:host {
   gap: 0.85rem;
 
   color: rgba(244, 241, 236, 0.76);
-  font-size: 0.86rem;
-  line-height: 1.55;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
 
   transition: color var(--transition-default);
 
@@ -176,11 +176,11 @@ s:host {
     flex-shrink: 0;
     place-items: center;
 
-    border-radius: 10px;
+    border-radius: var(--radius-small);
     background-color: rgba(184, 146, 79, 0.12);
 
     color: var(--color-champagne-gold);
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 
   span {
@@ -192,9 +192,9 @@ s:host {
   strong {
     margin-bottom: 2px;
     color: var(--color-champagne-gold);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-md);
     text-transform: uppercase;
   }
 }
@@ -205,7 +205,7 @@ a.footer__contact-item:hover {
 
 .footer__socials {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: var(--spacing-lg);
   gap: 0.65rem;
 
   a {
@@ -233,8 +233,8 @@ a.footer__contact-item:hover {
   }
 
   i {
-    font-size: 1rem;
-    line-height: 1;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-base);
   }
 
   path {
@@ -259,12 +259,12 @@ a.footer__contact-item:hover {
 
   p {
     color: rgba(244, 241, 236, 0.62);
-    font-size: 0.78rem;
+    font-size: var(--font-size-xs);
   }
 
   strong {
     color: rgba(244, 241, 236, 0.85);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
   }
 }
 
@@ -356,9 +356,9 @@ a.footer__contact-item:hover {
     strong {
       margin-bottom: 2px;
       color: var(--color-champagne-gold);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: var(--letter-spacing-md);
       text-transform: uppercase;
     }
   }

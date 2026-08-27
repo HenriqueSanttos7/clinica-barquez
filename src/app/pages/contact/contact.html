@@ -20,7 +20,7 @@
       <div class="contact-hero__actions">
         <a
           class="contact-hero__button"
-          href="https://wa.me/5592992680076"
+          [href]="clinicContact.whatsappUrl"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -74,8 +74,8 @@
           <div>
             <span>WhatsApp</span>
 
-            <a href="https://wa.me/5592992680076" target="_blank" rel="noopener noreferrer">
-              (92) 98182-6512
+            <a [href]="clinicContact.whatsappUrl" target="_blank" rel="noopener noreferrer">
+              {{ clinicContact.whatsappDisplay }}
             </a>
           </div>
         </article>
@@ -88,7 +88,9 @@
           <div>
             <span>E-mail</span>
 
-            <a href="mailto:contato@siahonline.com.br"> contato@siahonline.com.br </a>
+            <a [href]="clinicContact.emailUrl" target="_blank" rel="noopener noreferrer">
+              {{ clinicContact.email }}
+            </a>
           </div>
         </article>
 
@@ -100,10 +102,11 @@
           <div>
             <span>Endereço</span>
 
-            <p>
-              Av. Cláudio Portinho, 365, Miranda Mall, Bloco C<br />
-              Salas 105, 106 e 107, Manaus – AM
-            </p>
+            <a [href]="clinicContact.mapsUrl" target="_blank" rel="noopener noreferrer">
+              {{ clinicContact.addressLine1 }}
+              <br />
+              {{ clinicContact.addressLine2 }}
+            </a>
           </div>
         </article>
 
@@ -115,7 +118,15 @@
           <div>
             <span>Atendimento</span>
 
-            <p>Segunda a sexta | 08h às 18h</p>
+            <p>
+              @for (line of clinicContact.hours; track line) {
+                {{ line }}
+
+                @if (!$last) {
+                  <br />
+                }
+              }
+            </p>
           </div>
         </article>
       </div>
@@ -262,7 +273,7 @@
             </small>
           }
 
-          <span class="contact-form__counter"> {{ (mensagem ?? '').length }}/1000 </span>
+          <span class="contact-form__counter"> {{ mensagem.length }}/1000 </span>
         </div>
 
         <!-- PRIVACIDADE -->
@@ -349,7 +360,7 @@
 
     <div class="contact-location__map">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.9863725284204!2d-59.96730463037814!3d-3.1091242606732306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c04cfbf8d79d9%3A0xe53857e78365c63e!2sSIAH%20Software%20e%20Servi%C3%A7os!5e0!3m2!1spt-BR!2sbr!4v1786371637232!5m2!1spt-BR!2sbr"
+        [src]="mapsEmbedUrl"
         title="Localização da Clínica Barquez"
         loading="lazy"
         allowfullscreen
@@ -371,7 +382,7 @@
 
     <a
       class="contact-cta__button"
-      href="https://wa.me/5592992680076"
+      [href]="clinicContact.whatsappUrl"
       target="_blank"
       rel="noopener noreferrer"
     >

@@ -43,9 +43,9 @@
 
   color: var(--color-sage-dark);
 
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -54,9 +54,9 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.8rem, 4vw, 4.25rem); 
-  font-weight: 500;
-  line-height: 1.05;
+  font-size: var(--font-fluid-hero);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 
   text-wrap: balance;
 }
@@ -83,19 +83,19 @@
   span:last-child {
     flex-shrink: 0;
 
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 }
 
 .about-hero__description {
   max-width: 500px;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 
   color: var(--color-text-soft);
 
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .about-hero__button {
@@ -117,8 +117,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
 
   text-transform: uppercase;
 
@@ -164,8 +164,8 @@
 
     color: var(--color-champagne-gold);
 
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
 
     letter-spacing: 0.13em;
     text-transform: uppercase;
@@ -176,10 +176,10 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: clamp(2rem, 3vw, 2.9rem);
-    font-weight: 500;
+    font-size: var(--font-fluid-title-md);
+    font-weight: var(--font-weight-medium);
 
-    line-height: 1.1;
+    line-height: var(--line-height-tight);
   }
 }
 
@@ -191,76 +191,6 @@
   gap: 1.35rem;
 
   max-width: 720px;
-}
-
-/* =========================================================
-   CARD MÉDICO
-   ========================================================= */
-
-.doctor-card {
-  overflow: hidden;
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-
-  background-color: var(--color-off-white-premium);
-
-  box-shadow: var(--shadow-small);
-
-  transition:
-    transform var(--transition-default),
-    box-shadow var(--transition-default);
-
-  &:hover {
-    transform: translateY(-5px);
-
-    box-shadow: var(--shadow-card);
-  }
-}
-
-.doctor-card__image {
-  overflow: hidden;
-
-  aspect-ratio: 4 / 3;
-
-  background-color: var(--color-fendi);
-
-  img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
-
-    transition: transform 400ms ease;
-  }
-}
-
-.doctor-card:hover .doctor-card__image img {
-  transform: scale(1.035);
-}
-
-.doctor-card__content {
-  padding: 1rem 1rem 1.1rem;
-
-  text-align: center;
-
-  h3 {
-    margin-bottom: 0.2rem;
-
-    color: var(--color-natural-walnut);
-
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  span {
-    color: var(--color-text-soft);
-
-    font-size: 0.82rem;
-  }
 }
 
 /* =========================================================
@@ -277,7 +207,7 @@
   }
 
   .about-hero__title {
-    font-size: clamp(2.5rem, 4.2vw, 3.4rem);
+    font-size: var(--font-fluid-title-lg);
   }
 
   .about-hero__team {
@@ -313,7 +243,7 @@
   .about-hero__title {
     max-width: 520px;
 
-    font-size: clamp(2.4rem, 10vw, 3.1rem);
+    font-size: var(--font-fluid-title-lg);
   }
 
   .about-hero__description {
@@ -329,12 +259,12 @@
   }
 
   .about-hero__team-header {
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 
     h2 {
       max-width: 520px;
 
-      font-size: clamp(2rem, 8vw, 2.6rem);
+      font-size: var(--font-fluid-title-md);
     }
   }
 
@@ -350,11 +280,11 @@
     padding: 0.9rem 0.7rem 1rem;
 
     h3 {
-      font-size: 1rem;
+      font-size: var(--font-size-md);
     }
 
     span {
-      font-size: 0.76rem;
+      font-size: var(--font-size-xs);
     }
   }
 }
@@ -411,12 +341,12 @@
 
 .about-story__eyebrow {
   display: inline-block;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-sm);
 
   color: var(--color-sage-dark);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -424,9 +354,9 @@
   max-width: 520px;
 
   color: var(--color-natural-walnut);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  font-weight: 500;
-  line-height: 1.08;
+  font-size: var(--font-fluid-title-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 }
 
 .about-story__divider {
@@ -446,7 +376,7 @@
 
   span:last-child {
     flex-shrink: 0;
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -454,11 +384,11 @@
   max-width: 530px;
 
   color: var(--color-text-soft);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 
   & + & {
-    margin-top: 1rem;
+    margin-top: var(--spacing-md);
   }
 }
 
@@ -495,11 +425,11 @@
   height: 48px;
   place-items: center;
 
-  border-radius: 14px;
+  border-radius: var(--radius-medium);
   background-color: rgba(167, 177, 157, 0.18);
 
   color: var(--color-sage-dark);
-  font-size: 1.15rem;
+  font-size: var(--font-size-lg);
 }
 
 .about-value {
@@ -508,9 +438,9 @@
     margin-bottom: 0.2rem;
 
     color: var(--color-champagne-gold);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-md);
     text-transform: uppercase;
   }
 
@@ -518,14 +448,14 @@
     margin-bottom: 0.35rem;
 
     color: var(--color-natural-walnut);
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
     color: var(--color-text-soft);
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
   }
 }
 

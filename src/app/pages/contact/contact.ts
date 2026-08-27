@@ -1,10 +1,10 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-
 import emailjs from '@emailjs/browser';
-
 import { environment } from '../../../environments/environment';
+import { CLINIC_CONTACT } from '../../shared/data/clinic.data';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 type StatusEnvio = 'sucesso' | 'erro' | null;
 
@@ -14,18 +14,23 @@ type StatusEnvio = 'sucesso' | 'erro' | null;
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
+
 export class Contact implements AfterViewInit {
   nome = '';
   telefone = '';
   email = '';
   assunto = '';
-  mensagem: string | null = '';
+  mensagem = '';
   aceitouPrivacidade = false;
+  
+  mapsEmbedUrl: SafeResourceUrl;
 
   enviando = false;
 
   statusEnvio: StatusEnvio = null;
   mensagemStatus = '';
+
+  readonly clinicContact = CLINIC_CONTACT;
 
   readonly telefonePattern = '^\\([1-9]\\d\\) \\d{4,5}-\\d{4}$';
 
@@ -38,13 +43,20 @@ export class Contact implements AfterViewInit {
 
   private rolarParaAgendamento = false;
 
-  constructor(private readonly route: ActivatedRoute) {
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly sanitizer: DomSanitizer,
+  ){
     const assuntoParam = this.route.snapshot.queryParamMap.get('assunto');
 
     if (assuntoParam && this.assuntosValidos.has(assuntoParam)) {
       this.assunto = assuntoParam;
       this.rolarParaAgendamento = true;
     }
+
+    this.mapsEmbedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.clinicContact.mapsEmbedUrl,
+    );
   }
 
   ngAfterViewInit(): void {
@@ -109,6 +121,7 @@ export class Contact implements AfterViewInit {
           email: this.email.trim(),
           assunto: this.assunto,
           mensagem: this.mensagem.trim(),
+          whatsapp_link: this.getWhatsappLink(),
         },
         {
           publicKey: environment.emailjs.publicKey,
@@ -177,5 +190,13 @@ export class Contact implements AfterViewInit {
     this.assunto = '';
     this.mensagem = '';
     this.aceitouPrivacidade = false;
+  }
+
+  private getWhatsappLink(): string {
+    const numero = (this.telefone ?? '').replace(/\D/g, '');
+
+    const mensagem = `Olá, ${this.nome}! Recebemos seu contato pelo site da Clínica Barquez.`;
+
+    return `https://wa.me/55${numero}?text=${encodeURIComponent(mensagem)}`;
   }
 }

@@ -1,0 +1,285 @@
+:host {
+  display: block;
+}
+
+.privacy-hero {
+  padding-block: clamp(5rem, 9vw, 8rem);
+
+  background:
+    radial-gradient(circle at 80% 20%, rgba(184, 146, 79, 0.08), transparent 30%),
+    var(--color-off-white-premium);
+}
+
+.privacy-hero__container {
+  max-width: 900px;
+  margin-inline: auto;
+
+  text-align: center;
+
+  > p {
+    max-width: 620px;
+
+    margin-inline: auto;
+
+    color: var(--color-text-soft);
+
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
+  }
+}
+
+.privacy-hero__eyebrow {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: var(--color-sage-dark);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-s);
+  text-transform: uppercase;
+}
+
+.privacy-hero h1 {
+  color: var(--color-natural-walnut);
+
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.privacy-hero__divider {
+  display: flex;
+
+  width: min(100%, 260px);
+
+  margin: 1.4rem auto;
+
+  align-items: center;
+  gap: 10px;
+
+  color: var(--color-champagne-gold);
+
+  span:first-child {
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-champagne-gold);
+  }
+}
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.privacy {
+  padding-block: clamp(4rem, 7vw, 7rem);
+
+  background-color: var(--color-ivory);
+}
+
+.privacy__container {
+  display: block;
+}
+
+/* =========================================================
+   POLÍTICA
+   ========================================================= */
+
+.privacy__content {
+  max-width: 850px;
+  margin-inline: auto;
+
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: var(--spacing-md);
+
+    color: var(--color-natural-walnut);
+
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: var(--font-weight-medium);
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  p {
+    color: var(--color-text-soft);
+
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
+
+    & + p {
+      margin-top: var(--spacing-md);
+    }
+  }
+}
+
+.privacy__contact {
+  display: flex;
+
+  margin-top: var(--spacing-lg);
+  padding: 1.2rem;
+
+  align-items: center;
+  gap: 1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-off-white-premium);
+
+  > i {
+    display: grid;
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border-radius: var(--radius-medium);
+
+    background-color: rgba(167, 177, 157, 0.18);
+
+    color: var(--color-sage-dark);
+  }
+
+  span {
+    display: block;
+
+    margin-bottom: 0.2rem;
+
+    color: var(--color-champagne-gold);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+  }
+}
+
+.privacy__updated {
+  margin-top: 2rem !important;
+
+  font-size: 0.78rem !important;
+  font-style: italic;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.privacy-cta {
+  background-color: var(--color-walnut-dark);
+}
+
+.privacy-cta__container {
+  display: flex;
+
+  min-height: 280px;
+
+  padding-block: 3.5rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 4rem;
+
+  span {
+    color: var(--color-champagne-gold);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-s);
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 650px;
+
+    margin-top: 0.4rem;
+
+    color: var(--color-off-white-premium);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-weight-medium);
+  }
+
+  p {
+    max-width: 600px;
+
+    margin-top: 0.7rem;
+
+    color: rgba(244, 241, 236, 0.7);
+  }
+
+  > a {
+    display: inline-flex;
+
+    min-height: 52px;
+
+    flex-shrink: 0;
+
+    padding: 0.85rem 1.6rem;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.55rem;
+
+    border-radius: var(--radius-medium);
+
+    background: var(--gradient-champagne);
+
+    color: var(--color-off-white-premium);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+  }
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .privacy__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .privacy-hero {
+    padding-block: 4rem;
+  }
+
+  .privacy {
+    padding-block: 4rem;
+  }
+
+  .privacy__content {
+    section {
+      padding-bottom: 2.8rem;
+
+      &:not(:first-child) {
+        padding-top: 2.8rem;
+      }
+    }
+  }
+
+  .privacy-cta__container {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 2rem;
+
+    > a {
+      width: 100%;
+    }
+  }
+}

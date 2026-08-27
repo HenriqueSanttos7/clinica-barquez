@@ -42,33 +42,65 @@
   /* Cores complementares */
   --color-white: #ffffff;
   --color-walnut-dark: #4d3324;
-  --color-gold-dark: #98743a;
-  --color-sage-dark: #7f8d75;
+  --color-gold-dark: #966f30;
+  --color-sage-dark: #799962;
+  --form-red: #b42318;
 
   /* Aplicações semânticas */
   --color-background: var(--color-off-white-premium);
   --color-surface: var(--color-white);
   --color-surface-soft: var(--color-ivory);
-  --color-text: var(--color-matte-graphite);
+  --color-text: rgb(31, 31, 31);
   --color-text-soft: #625a54;
   --color-heading: var(--color-natural-walnut);
   --color-primary: var(--color-champagne-gold);
   --color-primary-hover: var(--color-gold-dark);
-  --color-accent: var(--color-sage-green);
+  --color-accent: rgb(164, 179, 150);
 
   /* Bordas */
-  --color-border: rgba(110, 79, 58, 0.16);
-  --color-border-strong: rgba(110, 79, 58, 0.3);
+  --color-border: rgba(121, 78, 49, 0.16);
+  --color-border-strong: rgba(83, 57, 40, 0.3);
 
   /* Tipografia */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', Arial, sans-serif;
 
-  /* Tamanhos de texto */
-  --font-size-small: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-medium: 1.125rem;
-  --font-size-large: 1.5rem;
+  /* Tamanhos de Fonte (Font-Size) */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  /* Alturas de Linha (Line-Heights) */
+  --line-height-base: 1.08;
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.7;
+
+  /* Pesos de Font (Fonte-Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Tipografia Fluida (Fluid Typography / Clamp) */
+
+  --font-fluid-display: clamp(7rem, 20vw, 12rem);
+  --font-fluid-hero: clamp(2.8rem, 5vw, 4.5rem);
+  --font-fluid-title-lg: clamp(2.4rem, 4vw, 3.5rem);
+  --font-fluid-title-md: clamp(2rem, 3.5vw, 2.8rem);
+  --font-fluid-title-sm: clamp(1.6rem, 2.5vw, 2.2rem);
+
+  /* Espaçamento de Letras (Letter-Spacing) */
+  --letter-spacing-s: 0.1em;
+  --letter-spacing-sm: 0.04em;
+  --letter-spacing-md: 0.08em;
+  --letter-spacing-lg: 0.15em;
 
   /* Larguras */
   --container-width: 1240px;
@@ -95,6 +127,7 @@
   --shadow-small: 0 8px 24px rgba(78, 53, 36, 0.06);
   --shadow-card: 0 16px 45px rgba(78, 53, 36, 0.09);
   --shadow-header: 0 5px 25px rgba(78, 53, 36, 0.05);
+  --shadow-botton: 0 14px 30px rgba(0, 0, 0, 0.39);
 
   /* Animações */
   --transition-fast: 160ms ease;
@@ -129,20 +162,26 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--font-size-base);
-  line-height: 1.65;
+  line-height: var(--line-height-normal);
   -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
   color: var(--color-heading);
   font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+h4 {
+  color: var(--color-gold-dark);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
 }
 
 p {
@@ -212,7 +251,7 @@ ol {
   margin-bottom: var(--spacing-sm);
   color: var(--color-champagne-gold);
   font-size: var(--font-size-small);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -220,12 +259,132 @@ ol {
 .section-title {
   max-width: 760px;
   margin-bottom: var(--spacing-lg);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: var(--font-fluid-title-lg);
 }
 
 .section-description {
   max-width: 680px;
   font-size: var(--font-size-medium);
+}
+
+/* =========================================================
+   SEÇÕES REUTILIZÁVEIS
+   ========================================================= */
+
+.section-space {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.section-eyebrow {
+  display: inline-block;
+
+  margin-bottom: var(--spacing-sm);
+
+  color: var(--color-sage-dark);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-s);
+  text-transform: uppercase;
+}
+
+.section-heading {
+  color: var(--color-natural-walnut);
+
+  font-size: var(--font-fluid-title-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.section-divider {
+  display: flex;
+
+  width: min(100%, 240px);
+
+  margin-block: 1.25rem;
+
+  align-items: center;
+  gap: 10px;
+
+  color: var(--color-champagne-gold);
+
+  span:first-child {
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-champagne-gold);
+  }
+
+  span:last-child {
+    flex-shrink: 0;
+  }
+}
+
+.text-link {
+  display: inline-flex;
+
+  width: fit-content;
+
+  align-items: center;
+  gap: 0.55rem;
+
+  color: var(--color-champagne-gold);
+
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
+
+  transition:
+    gap var(--transition-default),
+    color var(--transition-default);
+
+  &:hover {
+    gap: 0.85rem;
+
+    color: var(--color-natural-walnut);
+  }
+}
+
+/* =========================================================
+   CARDS REUTILIZÁVEIS
+   ========================================================= */
+
+.surface-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-ivory);
+
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default),
+    border-color var(--transition-default);
+
+  &:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(184, 146, 79, 0.35);
+
+    box-shadow: var(--shadow-card);
+  }
+}
+
+.icon-box {
+  display: grid;
+
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  place-items: center;
+
+  border-radius: var(--radius-medium);
+
+  background-color: rgba(167, 177, 157, 0.18);
+
+  color: var(--color-sage-dark);
+
+  font-size: var(--font-size-xl);
 }
 
 /* =========================================================
@@ -241,7 +400,7 @@ ol {
   padding: 0.85rem 1.5rem;
   border: 1px solid transparent;
   border-radius: var(--radius-medium);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition:
     background-color var(--transition-default),
@@ -314,7 +473,7 @@ ol {
     max-width: 240px;
     padding: var(--spacing-md);
     font-size: var(--font-size-small);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
   }
 }
 
@@ -339,7 +498,23 @@ ol {
   }
 
   .section-title {
-    font-size: clamp(2rem, 10vw, 2.75rem);
+    font-size: var(--font-fluid-title-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-space {
+    padding-block: 4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-space {
+    padding-block: 3.5rem;
+  }
+
+  .section-heading {
+    font-size: var(--font-size-4xl);
   }
 }
 

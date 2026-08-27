@@ -34,12 +34,12 @@
 .not-found__eyebrow {
   display: inline-block;
 
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
 
   color: var(--color-sage-dark);
 
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -51,9 +51,9 @@
 
   font-family: var(--font-heading);
 
-  font-size: clamp(8rem, 20vw, 15rem);
-  font-weight: 500;
-  line-height: 0.9;
+  font-size: var(--font-fluid-display);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 
   user-select: none;
 }
@@ -68,9 +68,9 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.3rem, 5vw, 4rem);
-  font-weight: 500;
-  line-height: 1.08;
+  font-size: var(--font-fluid-title-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 
   text-wrap: balance;
 }
@@ -106,14 +106,14 @@
 
   color: var(--color-text-soft);
 
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .not-found__actions {
   display: flex;
 
-  margin-top: 2rem;
+  margin-top: var(--spacing-xl);
 
   justify-content: center;
   flex-wrap: wrap;
@@ -135,8 +135,8 @@
 
   border-radius: var(--radius-medium);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   transition:
@@ -191,7 +191,7 @@
   }
 
   .not-found__description {
-    font-size: 0.92rem;
+    font-size: var(--font-size-md);
   }
 
   .not-found__actions {

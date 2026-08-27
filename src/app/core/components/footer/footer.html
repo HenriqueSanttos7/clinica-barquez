@@ -38,11 +38,9 @@
         <h2 class="footer__title">Serviços</h2>
 
         <nav class="footer__navigation" aria-label="Serviços da clínica">
-          <a routerLink="/servicos">Clínica Médica</a>
-          <a routerLink="/servicos">Cardiologia</a>
-          <a routerLink="/servicos">Ginecologia</a>
-          <a routerLink="/servicos">Nutrição</a>
-          <a routerLink="/servicos">Psicologia</a>
+          @for (services of services; track services.id) {
+            <a [routerLink]="['/servicos', services.id]">{{ services.nome }}</a>
+          }
         </nav>
       </div>
 
@@ -52,7 +50,7 @@
         <address class="footer__contact-list">
           <a
             class="footer__contact-item"
-            href="https://wa.me/5592992680076"
+            [href]="clinicContact.whatsappUrl"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -60,16 +58,16 @@
 
             <span>
               <strong>WhatsApp</strong>
-              (92) 98182-6512
+              {{ clinicContact.whatsappDisplay }}
             </span>
           </a>
 
-          <a class="footer__contact-item" href="mailto:contato@siahonline.com.br">
+          <a class="footer__contact-item" [href]="'mailto:' + clinicContact.email">
             <i class="far fa-envelope" aria-hidden="true"></i>
 
             <span>
               <strong>E-mail</strong>
-              contato@clinicabarquez.com.br
+              {{ clinicContact.email }}
             </span>
           </a>
 
@@ -78,15 +76,16 @@
 
             <span>
               <strong>Endereço</strong>
-              Av. Cláudio Portinho, nº 365<br />
-              Miranda Mall, Sala 105 | Manaus/AM
+              {{ clinicContact.addressLine1 }}
+              <br />
+              {{ clinicContact.addressLine2 }}
             </span>
           </div>
         </address>
 
         <div class="footer__socials" aria-label="Redes sociais">
           <a
-            href="https://www.instagram.com/clinica.barquez/"
+            [href]="'https://www.instagram.com/' + clinicContact.instagram"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram da Clínica Barquez"
@@ -95,7 +94,7 @@
           </a>
 
           <a
-            href="https://www.facebook.com/clinica.barquez/"
+            [href]="clinicContact.facebook"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook da Clínica Barquez"
@@ -104,7 +103,7 @@
           </a>
 
           <a
-            href="https://wa.me/5592992680076"
+            [href]="'https://wa.me/' + clinicContact.whatsappUrl"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp da Clínica Barquez"

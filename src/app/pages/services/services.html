@@ -45,113 +45,30 @@
     </div>
 
     <div class="services__grid">
-      <article class="service-card">
-        <div class="service-card__icon">
-          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
-        </div>
+      @for (service of services; track service.id) {
+        <article class="service-card">
+          <div class="service-card__icon">
+            <i [class]="service.icone" aria-hidden="true"></i>
+          </div>
 
-        <h3>Clínica Médica</h3>
+          <h3>
+            {{ service.nome }}
+          </h3>
 
-        <p>
-          Acompanhamento integral da saúde, avaliação clínica, prevenção e diagnóstico com atenção
-          individualizada.
-        </p>
+          <p>
+            {{ service.resumo }}
+          </p>
 
-        <a href="/contato" aria-label="Agendar atendimento de Clínica Médica">
-          Agendar atendimento
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
+          <a
+            [routerLink]="['/servicos', service.id]"
+            [attr.aria-label]="'Saiba mais sobre ' + service.nome"
+          >
+            Saiba mais
 
-      <article class="service-card">
-        <div class="service-card__icon">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-        </div>
-
-        <h3>Cardiologia</h3>
-
-        <p>
-          Avaliação e acompanhamento da saúde cardiovascular com foco em prevenção, diagnóstico e
-          qualidade de vida.
-        </p>
-
-        <a href="/contato" aria-label="Agendar atendimento de Cardiologia">
-          Agendar atendimento
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon">
-          <i class="fa-solid fa-person-dress" aria-hidden="true"></i>
-        </div>
-
-        <h3>Ginecologia</h3>
-
-        <p>
-          Cuidado integral da saúde feminina em diferentes fases da vida, com acolhimento,
-          orientação e acompanhamento.
-        </p>
-
-        <a href="/contato" aria-label="Agendar atendimento de Ginecologia">
-          Agendar atendimento
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon">
-          <i class="fa-solid fa-apple-whole" aria-hidden="true"></i>
-        </div>
-
-        <h3>Nutrição</h3>
-
-        <p>
-          Orientação alimentar personalizada para promover saúde, equilíbrio, qualidade de vida e
-          bem-estar.
-        </p>
-
-        <a href="/contato" aria-label="Agendar atendimento de Nutrição">
-          Agendar atendimento
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon">
-          <i class="fa-solid fa-brain" aria-hidden="true"></i>
-        </div>
-
-        <h3>Psicologia</h3>
-
-        <p>
-          Espaço de escuta, acolhimento e acompanhamento para promover equilíbrio emocional e
-          qualidade de vida.
-        </p>
-
-        <a href="/contato" aria-label="Agendar atendimento de Psicologia">
-          Agendar atendimento
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon">
-          <i class="fa-solid fa-child-reaching" aria-hidden="true"></i>
-        </div>
-
-        <h3>Pediatria</h3>
-
-        <p>
-          Acompanhamento da saúde infantil com atenção ao crescimento, desenvolvimento, prevenção e
-          bem-estar.
-        </p>
-
-        <a href="/contato" aria-label="Agendar atendimento de Pediatria">
-          Agendar atendimento
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+      }
     </div>
   </div>
 </section>

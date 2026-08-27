@@ -60,18 +60,18 @@
   </div>
 </section>
 
-<section class="home-about">
+<section class="home-about section-space">
   <div class="home-about__container container">
     <div class="home-about__image">
       <img src="/images/home/sobre-clinica.webp" alt="Ambiente da Clínica Barquez" />
     </div>
 
     <div class="home-about__content">
-      <span class="home-section__eyebrow">Sobre nós</span>
+      <span class="section-eyebrow">Sobre nós</span>
 
-      <h2>Cuidado próximo, humano e feito para você</h2>
+      <h2 class="section-heading">Cuidado próximo, humano e feito para você</h2>
 
-      <div class="home-section__divider" aria-hidden="true">
+      <div class="section-divider" aria-hidden="true">
         <span></span>
       </div>
 
@@ -85,7 +85,7 @@
         para proporcionar conforto e segurança em todas as etapas do atendimento.
       </p>
 
-      <a class="home-link" routerLink="/sobre">
+      <a class="text-link" routerLink="/sobre">
         Conheça a Clínica
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
@@ -93,11 +93,11 @@
   </div>
 </section>
 
-<section class="home-services">
+<section class="home-services section-space">
   <div class="home-services__container container">
     <div class="home-section__header">
       <div>
-        <span class="home-section__eyebrow">Nossos serviços</span>
+        <span class="section-eyebrow">Nossos serviços</span>
 
         <h2>Cuidado completo em diferentes áreas da saúde</h2>
       </div>
@@ -105,7 +105,7 @@
       <div class="home-section__header-side">
         <p>Conheça algumas das especialidades disponíveis na Clínica Barquez.</p>
 
-        <a class="home-link" routerLink="/servicos">
+        <a class="text-link" routerLink="/servicos">
           Ver todos os serviços
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
@@ -113,65 +113,36 @@
     </div>
 
     <div class="home-services__grid">
-      <article class="home-service-card">
-        <div class="home-service-card__icon">
-          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
-        </div>
+      @for (service of servicesDestaque; track service.id) {
+        <article class="home-service-card surface-card">
+          <div class="icon-box">
+            <i [class]="service.icone" aria-hidden="true"></i>
+          </div>
 
-        <h3>Clínica Médica</h3>
+          <h3>{{ service.nome }}</h3>
 
-        <p>Avaliação clínica, prevenção e acompanhamento da saúde de forma individualizada.</p>
+          <p>{{ service.resumo }}</p>
 
-        <a routerLink="/servicos">
-          Saiba mais
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
+          <a class="text-link" [routerLink]="['/servicos', service.id]">
+            Saiba mais
 
-      <article class="home-service-card">
-        <div class="home-service-card__icon">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-        </div>
-
-        <h3>Cardiologia</h3>
-
-        <p>
-          Cuidado e acompanhamento da saúde cardiovascular com atenção à prevenção e qualidade de
-          vida.
-        </p>
-
-        <a routerLink="/servicos">
-          Saiba mais
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
-
-      <article class="home-service-card">
-        <div class="home-service-card__icon">
-          <i class="fa-solid fa-apple-whole" aria-hidden="true"></i>
-        </div>
-
-        <h3>Nutrição</h3>
-
-        <p>Orientação alimentar personalizada para promover saúde, equilíbrio e bem-estar.</p>
-
-        <a routerLink="/servicos">
-          Saiba mais
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </article>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+      }
     </div>
   </div>
 </section>
 
-<section class="home-team">
+
+<section class="home-team section-space">
   <div class="home-team__container container">
     <div class="home-team__intro">
-      <span class="home-section__eyebrow">Nossa equipe</span>
+      <span class="section-eyebrow">Nossa equipe</span>
 
       <h2>Profissionais dedicados ao seu cuidado</h2>
 
-      <div class="home-section__divider" aria-hidden="true">
+      <div class="section-divider" aria-hidden="true">
         <span></span>
         <span>✦</span>
       </div>
@@ -181,51 +152,34 @@
         atendimento humanizado.
       </p>
 
-      <a class="home-link" routerLink="/equipe">
+      <a class="text-link" routerLink="/equipe">
         Conheça nossa equipe
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
     </div>
 
     <div class="home-team__grid">
-      <article class="home-professional">
-        <div class="home-professional__image">
-          <img src="/images/team/herdeson.webp" alt="Dr. Herdeson Queiroz" />
-        </div>
-
-        <div class="home-professional__content">
-          <span>Clínico Médico</span>
-          <h3>Dr. Herdeson Queiroz</h3>
-        </div>
-      </article>
-
-      <article class="home-professional">
-        <div class="home-professional__image">
-          <img src="/images/team/giully.webp" alt="Dra. Giully" />
-        </div>
-
-        <div class="home-professional__content">
-          <span>Clínica Médica</span>
-          <h3>Dra. Giully</h3>
-        </div>
-      </article>
+      @for (professional of professionalsDestaque; track professional.id) {
+        <app-professional-card [professional]="professional" />
+      }
     </div>
   </div>
 </section>
 
-<section class="home-differentials">
+
+<section class="home-differentials section-space">
   <div class="home-differentials__container container">
     <div class="home-differentials__header">
-      <span class="home-section__eyebrow"> Por que escolher a Clínica Barquez? </span>
+      <span class="section-eyebrow"> Por que escolher a Clínica Barquez? </span>
 
       <h2>Uma experiência de cuidado pensada em cada detalhe</h2>
     </div>
 
     <div class="home-differentials__grid">
-      <article class="home-differential">
+      <article class="home-differential surface-card">
         <span class="home-differential__number">01</span>
 
-        <div class="home-differential__icon">
+        <div class="icon-box">
           <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
         </div>
 
@@ -234,10 +188,10 @@
         <p>Escuta, acolhimento e respeito às necessidades de cada paciente.</p>
       </article>
 
-      <article class="home-differential">
+      <article class="home-differential surface-card">
         <span class="home-differential__number">02</span>
 
-        <div class="home-differential__icon">
+        <div class="icon-box">
           <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
         </div>
 
@@ -246,10 +200,10 @@
         <p>Uma equipe preparada para oferecer segurança e excelência no atendimento.</p>
       </article>
 
-      <article class="home-differential">
+      <article class="home-differential surface-card">
         <span class="home-differential__number">03</span>
 
-        <div class="home-differential__icon">
+        <div class="icon-box">
           <i class="fa-solid fa-house-medical" aria-hidden="true"></i>
         </div>
 
@@ -258,10 +212,10 @@
         <p>Um espaço pensado para proporcionar conforto, tranquilidade e bem-estar.</p>
       </article>
 
-      <article class="home-differential">
+      <article class="home-differential surface-card">
         <span class="home-differential__number">04</span>
 
-        <div class="home-differential__icon">
+        <div class="icon-box">
           <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
         </div>
 
@@ -274,8 +228,8 @@
 </section>
 
 <section class="home-cta">
-  <div class="home-cta__container container">
-    <div class="home-cta__content">
+
+    <div class="home-cta__content container">
       <span>Seu bem-estar começa aqui</span>
 
       <h2>Estamos prontos para cuidar de você.</h2>
@@ -283,10 +237,4 @@
       <p>Entre em contato com nossa equipe e agende seu atendimento na Clínica Barquez.</p>
     </div>
 
-    <div class="home-cta__actions">
-      <a class="home-cta__button" routerLink="/contato"> Agende sua consulta </a>
-
-      <a class="home-cta__link" routerLink="/servicos"> Conheça nossos serviços </a>
-    </div>
-  </div>
 </section>

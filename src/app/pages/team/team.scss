@@ -26,10 +26,7 @@
   display: flex;
   min-width: 0;
 
-  padding:
-    clamp(3rem, 5vw, 5rem)
-    clamp(3rem, 5vw, 5rem)
-    clamp(3rem, 5vw, 5rem)
+  padding: clamp(3rem, 5vw, 5rem) clamp(3rem, 5vw, 5rem) clamp(3rem, 5vw, 5rem)
     max(24px, calc((100vw - var(--container-width)) / 2));
 
   flex-direction: column;
@@ -60,13 +57,13 @@
 .team__eyebrow,
 .team-cta__eyebrow {
   display: inline-block;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-sm);
 
   color: var(--color-sage-dark);
 
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -75,9 +72,9 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.8rem, 5vw, 4.6rem);
-  font-weight: 500;
-  line-height: 1.05;
+  font-size: var(--font-fluid-hero);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 
   text-wrap: balance;
 }
@@ -106,8 +103,8 @@
 
   color: var(--color-text-soft);
 
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .team-hero__button {
@@ -128,8 +125,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   transition:
@@ -189,8 +186,8 @@
   color: var(--color-natural-walnut);
 
   font-size: clamp(2.3rem, 4vw, 3.5rem);
-  font-weight: 500;
-  line-height: 1.08;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 }
 
 .team__description {
@@ -200,11 +197,12 @@
 
   color: var(--color-text-soft);
 
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 }
 
 .team__grid {
+  width: 100%;
   display: grid;
 
   max-width: 950px;
@@ -213,114 +211,6 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 1.5rem;
-}
-
-/* =========================================================
-   CARD PROFISSIONAL
-   ========================================================= */
-
-.professional-card {
-  overflow: hidden;
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-
-  background-color: var(--color-off-white-premium);
-
-  box-shadow: var(--shadow-small);
-
-  transition:
-    transform var(--transition-default),
-    box-shadow var(--transition-default);
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-card);
-  }
-}
-
-.professional-card__image {
-  width: 100%;
-
-  aspect-ratio: 4 / 3;
-
-  overflow: hidden;
-
-  background-color: var(--color-fendi);
-
-  img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
-
-    transition: transform 600ms ease;
-  }
-}
-
-.professional-card:hover .professional-card__image img {
-  transform: scale(1.025);
-}
-
-.professional-card__content {
-  padding: 1.6rem;
-
-  h3 {
-    margin-top: 0.25rem;
-
-    color: var(--color-natural-walnut);
-
-    font-size: 1.55rem;
-    font-weight: 500;
-  }
-
-  p {
-    margin-bottom: 1.4rem;
-
-    color: var(--color-text-soft);
-
-    font-size: 0.88rem;
-    line-height: 1.65;
-  }
-
-  a {
-    display: inline-flex;
-
-    align-items: center;
-    gap: 0.5rem;
-
-    color: var(--color-champagne-gold);
-
-    font-size: 0.8rem;
-    font-weight: 700;
-
-    transition: gap var(--transition-default);
-
-    &:hover {
-      gap: 0.8rem;
-    }
-  }
-}
-
-.professional-card__specialty {
-  color: var(--color-sage-dark);
-
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.professional-card__divider {
-  width: 50px;
-  height: 1px;
-
-  margin-block: 1rem;
-
-  background-color: var(--color-champagne-gold);
 }
 
 /* =========================================================
@@ -358,9 +248,9 @@
   span {
     color: var(--color-champagne-gold);
 
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-md);
     text-transform: uppercase;
   }
 
@@ -369,15 +259,15 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
     color: var(--color-text-soft);
 
-    font-size: 0.85rem;
-    line-height: 1.55;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
   }
 }
 
@@ -389,7 +279,7 @@
 
   place-items: center;
 
-  border-radius: 15px;
+  border-radius: var(--radius-medium);
 
   background-color: rgba(167, 177, 157, 0.18);
 
@@ -421,9 +311,9 @@
 
     color: var(--color-off-white-premium);
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 500;
-    line-height: 1.1;
+    font-size: var(--font-fluid-title-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
   }
 
   p {
@@ -457,8 +347,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   transition:
@@ -520,7 +410,7 @@
   }
 
   .team-hero__title {
-    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    font-size: var(--font-fluid-title-lg);
   }
 
   .team__grid {
