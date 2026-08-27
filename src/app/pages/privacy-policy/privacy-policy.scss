@@ -44,7 +44,7 @@
 .privacy-hero h1 {
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: var(--font-fluid-hero);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-base);
 }
@@ -97,7 +97,7 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-size: var(--font-fluid-title-md);
     font-weight: var(--font-weight-medium);
   }
 
@@ -204,7 +204,7 @@
 
     color: var(--color-off-white-premium);
 
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: var(--font-fluid-title-md);
     font-weight: var(--font-weight-medium);
   }
 

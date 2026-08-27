@@ -183,11 +183,11 @@
   .not-found__code {
     margin-bottom: -0.5rem;
 
-    font-size: clamp(7rem, 38vw, 10rem);
+    font-size: var(--font-fluid-display);
   }
 
   .not-found__title {
-    font-size: clamp(2rem, 9vw, 2.7rem);
+    font-size: var(--font-fluid-title-md);
   }
 
   .not-found__description {

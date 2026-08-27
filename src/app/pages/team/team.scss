@@ -185,7 +185,7 @@
 .team__title {
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-size: var(--font-fluid-title-lg);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-base);
 }

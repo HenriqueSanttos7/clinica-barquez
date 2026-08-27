@@ -36,7 +36,7 @@
 
   font-size: var(--font-size-xl);
 
-  box-shadow: 0 8px 24px rgba(43, 43, 43, 0.2);
+  box-shadow: var(--shadow-card);
 
   transition:
     transform 180ms ease,
@@ -47,7 +47,7 @@
   &:hover {
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 28px rgba(43, 43, 43, 0.28);
+    box-shadow: var(--shadow-button);
   }
 }
 

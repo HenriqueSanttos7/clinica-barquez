@@ -58,7 +58,7 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-size: var(--font-fluid-fluid-hero);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-base);
   }
@@ -157,7 +157,7 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: var(--font-fluid-title-sm);
     font-weight: var(--font-weight-medium);
   }
 
@@ -212,7 +212,7 @@
 
     color: var(--color-off-white-premium);
 
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: var(--font-fluid-title-md);
     font-weight: var(--font-weight-medium);
   }
 
@@ -358,7 +358,7 @@
     }
 
     h1 {
-      font-size: clamp(2.5rem, 11vw, 3.5rem);
+      font-size: var(--font-fluid-title-lg);
     }
   }
 
