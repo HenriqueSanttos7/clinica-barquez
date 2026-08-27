@@ -59,13 +59,13 @@
 .contact-cta__eyebrow {
   display: inline-block;
 
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-sm);
 
   color: var(--color-sage-dark);
 
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -74,7 +74,7 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-size: var(--font-fluid-hero);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-base);
 
@@ -129,8 +129,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   transition:
@@ -191,17 +191,17 @@
 
   margin-top: 0.25rem;
 
-  color: #b42318;
+  color: var(--form-red);
 
-  font-size: 0.75rem;
-  line-height: 1.4;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-snug);
 }
 
 .contact-form__field {
   input.ng-invalid.ng-touched,
   select.ng-invalid.ng-touched,
   textarea.ng-invalid.ng-touched {
-    border-color: #b42318;
+    border-color: var(--form-red);
 
     box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.08);
   }
@@ -230,19 +230,19 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.3rem, 4vw, 3.4rem);
-  font-weight: 500;
-  line-height: 1.08;
+  font-size: var(--font-fluid-title-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
 }
 
 .contact-section__description {
   max-width: 540px;
 
-  margin-top: 1rem;
+  margin-top: var(--spacing-md);
 
   color: var(--color-text-soft);
 
-  line-height: 1.7;
+  line-height: var(--line-height-normal);
 }
 
 .contact-info {
@@ -274,9 +274,9 @@
 
     color: var(--color-champagne-gold);
 
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-md);
     text-transform: uppercase;
   }
 
@@ -284,8 +284,8 @@
   p {
     color: var(--color-text-soft);
 
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
   }
 
   a:hover {
@@ -301,7 +301,7 @@
 
   place-items: center;
 
-  border-radius: 14px;
+  border-radius: var(--radius-medium);
 
   background-color: rgba(167, 177, 157, 0.18);
 
@@ -324,34 +324,33 @@
 }
 
 .contact-form-wrapper__header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-xl);
 
   span {
     display: block;
-
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
 
     color: var(--color-sage-dark);
 
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-s);
     text-transform: uppercase;
   }
 
   h2 {
     color: var(--color-natural-walnut);
 
-    font-size: clamp(2rem, 3vw, 2.7rem);
-    font-weight: 500;
+    font-size: var(--font-fluid-title-md);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-xs);
 
     color: var(--color-text-soft);
 
-    font-size: 0.9rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -375,8 +374,8 @@
   label {
     color: var(--color-natural-walnut);
 
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
   }
 
   input,
@@ -434,8 +433,8 @@
   color: var(--color-off-white-premium);
 
   font: inherit;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 
   cursor: pointer;
@@ -463,34 +462,34 @@
 .contact-location__header {
   max-width: 650px;
 
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-xl);
 
   span {
     display: block;
 
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
 
     color: var(--color-sage-dark);
 
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-s);
     text-transform: uppercase;
   }
 
   h2 {
     color: var(--color-natural-walnut);
 
-    font-size: clamp(2.2rem, 4vw, 3.3rem);
-    font-weight: 500;
+    font-size: var(--font-fluid-title-lg);
+    font-weight: var(--font-weight-medium);
   }
 
   p {
-    margin-top: 0.75rem;
+    margin-top: var(--spacing-sm);
 
     color: var(--color-text-soft);
 
-    line-height: 1.65;
+    line-height: var(--line-height-normal);
   }
 }
 
@@ -540,9 +539,9 @@
 
     color: var(--color-off-white-premium);
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 500;
-    line-height: 1.1;
+    font-size: var(--font-fluid-title-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
   }
 
   p {
@@ -578,8 +577,8 @@
 
   color: var(--color-off-white-premium);
 
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
 
@@ -646,7 +645,7 @@
   }
 
   .contact-hero__title {
-    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    font-size: var(--font-fluid-title-lg);
   }
 
   .contact-form__row {
@@ -715,8 +714,8 @@
 
   color: #a33a32;
 
-  font-size: 0.73rem;
-  line-height: 1.4;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-snug);
 }
 
 .contact-form__field {
@@ -734,7 +733,7 @@
 
   color: var(--color-text-soft);
 
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
 }
 
 /* =========================================================
@@ -754,8 +753,8 @@
 
     color: var(--color-text-soft);
 
-    font-size: 0.78rem;
-    line-height: 1.55;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
 
     cursor: pointer;
   }
@@ -774,7 +773,7 @@
   a {
     color: var(--color-champagne-gold);
 
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
 
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -800,8 +799,8 @@
   border: 1px solid;
   border-radius: 12px;
 
-  font-size: 0.82rem;
-  line-height: 1.5;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
 
   i {
     margin-top: 2px;

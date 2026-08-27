@@ -45,7 +45,7 @@
 
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -54,7 +54,7 @@
 
   color: var(--color-natural-walnut);
 
-  font-size: clamp(2.8rem, 4vw, 4.25rem);
+  font-size: var(--font-fluid-hero);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-base);
 
@@ -90,7 +90,7 @@
 .about-hero__description {
   max-width: 500px;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 
   color: var(--color-text-soft);
 
@@ -176,7 +176,7 @@
 
     color: var(--color-natural-walnut);
 
-    font-size: clamp(2rem, 3vw, 2.9rem);
+    font-size: var(--font-fluid-title-md);
     font-weight: var(--font-weight-medium);
 
     line-height: var(--line-height-tight);
@@ -207,7 +207,7 @@
   }
 
   .about-hero__title {
-    font-size: clamp(2.5rem, 4.2vw, 3.4rem);
+    font-size: var(--font-fluid-title-lg);
   }
 
   .about-hero__team {
@@ -243,7 +243,7 @@
   .about-hero__title {
     max-width: 520px;
 
-    font-size: clamp(2.4rem, 10vw, 3.1rem);
+    font-size: var(--font-fluid-title-lg);
   }
 
   .about-hero__description {
@@ -259,12 +259,12 @@
   }
 
   .about-hero__team-header {
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 
     h2 {
       max-width: 520px;
 
-      font-size: clamp(2rem, 8vw, 2.6rem);
+      font-size: var(--font-fluid-title-md);
     }
   }
 
@@ -341,12 +341,12 @@
 
 .about-story__eyebrow {
   display: inline-block;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-sm);
 
   color: var(--color-sage-dark);
   font-size: var(--font-sm);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-s);
   text-transform: uppercase;
 }
 
@@ -354,7 +354,7 @@
   max-width: 520px;
 
   color: var(--color-natural-walnut);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: var(--font-fluid-title-lg);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-base);
 }
@@ -376,7 +376,7 @@
 
   span:last-child {
     flex-shrink: 0;
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -384,11 +384,11 @@
   max-width: 530px;
 
   color: var(--color-text-soft);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
 
   & + & {
-    margin-top: 1rem;
+    margin-top: var(--spacing-md);
   }
 }
 
@@ -425,7 +425,7 @@
   height: 48px;
   place-items: center;
 
-  border-radius: 14px;
+  border-radius: var(--radius-medium);
   background-color: rgba(167, 177, 157, 0.18);
 
   color: var(--color-sage-dark);
@@ -440,7 +440,7 @@
     color: var(--color-champagne-gold);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    letter-spacing: 0.08em;
+    letter-spacing: var(--letter-spacing-md);
     text-transform: uppercase;
   }
 

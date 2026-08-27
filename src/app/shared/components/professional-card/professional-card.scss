@@ -75,18 +75,18 @@
 
   color: var(--color-champagne-gold);
 
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-md);
   text-transform: uppercase;
 }
 
 .professional-card__name {
   color: var(--color-natural-walnut);
 
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.15;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
 }
 
 .professional-card__registration {
@@ -96,8 +96,8 @@
 
   color: var(--color-sage-dark);
 
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
 }
 
 .professional-card__description {
@@ -105,8 +105,8 @@
 
   color: var(--color-text-soft);
 
-  font-size: 0.86rem;
-  line-height: 1.65;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
 }
 
 @media (max-width: 560px) {
@@ -115,6 +115,6 @@
   }
 
   .professional-card__name {
-    font-size: 1.35rem;
+    font-size: var(--font-size-xl);
   }
 }
