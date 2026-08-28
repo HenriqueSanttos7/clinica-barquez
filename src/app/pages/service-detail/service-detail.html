@@ -107,6 +107,16 @@
       </article>
     </div>
   </section>
+
+  <aside class="services-sidebar">
+    <h3 class="sidebar-title">Outras Especialidades</h3>
+
+    <div class="sidebar-list">
+      @for (item of allServices; track item.id) {
+        <app-service-card [service]="item" [compact]="true" [active]="item.id === currentId" />
+      }
+    </div>
+  </aside>
 } @else {
   <section class="service-not-found container">
     <h1>Serviço não encontrado</h1>

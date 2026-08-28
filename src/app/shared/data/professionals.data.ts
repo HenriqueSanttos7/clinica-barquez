@@ -1,6 +1,6 @@
 import { Professional } from '../models/professional.models';
 
-export const PROFESSIONALS_DATA: Professional[] = [
+export const PROFESSIONALS: Professional[] = [
   {
     id: 'herdeson',
     nome: 'Dr. Herdeson Queiroz',

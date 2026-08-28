@@ -1,0 +1,39 @@
+<article
+  class="service-card"
+  [class.service-card--compact]="compact"
+  [class.service-card--active]="active"
+>
+  <div class="service-card__image-wrapper">
+    <img [src]="service.imagem" [alt]="service.nome" class="service-card__image" loading="lazy" />
+  </div>
+
+  <div class="service-card__content">
+    <h3 class="service-card__title">{{ service.nome }}</h3>
+
+    @if (!compact) {
+      <p class="service-card__description">
+        {{ service.subtitulo }}
+      </p>
+    }
+
+    <a
+      [routerLink]="['/servicos', service.id]"
+      class="service-card__link"
+      [attr.aria-label]="'Ver detalhes de ' + service.nome"
+    >
+      <span>{{ compact ? 'Ver especialidade' : 'Saiba mais' }}</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</article>

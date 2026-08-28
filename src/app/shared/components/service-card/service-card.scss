@@ -1,0 +1,146 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--color-champagne-gold);
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--color-surface-soft);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-default);
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  &__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-soft);
+    line-height: var(--line-height-normal);
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-champagne-gold);
+    transition:
+      gap var(--transition-fast),
+      color var(--transition-fast);
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transition: transform var(--transition-fast);
+    }
+
+    &:hover {
+      color: var(--color-gold-dark);
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  /* =========================================================
+     MODIFICADOR: COMPACTO (Para Sidebar e Páginas de Detalhes)
+     ========================================================= */
+  &--compact {
+    flex-direction: row;
+    align-items: center;
+    border-radius: var(--radius-sm);
+    box-shadow: none;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    .service-card__image-wrapper {
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
+    }
+
+    .service-card__content {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .service-card__title {
+      font-size: var(--font-size-md);
+      margin-bottom: 2px;
+    }
+
+    .service-card__link {
+      font-size: var(--font-size-xs);
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  /* =========================================================
+     MODIFICADOR: ATIVO (Serviço Atual)
+     ========================================================= */
+  &--active {
+    border: 2px solid var(--color-champagne-gold);
+    background: var(--gradient-champagne-soft);
+    pointer-events: none; // Evita recarregar a mesma página ao clicar
+
+    .service-card__title {
+      color: var(--color-gold-dark);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .service-card__link {
+      display: none; // Oculta o link pois já está nesta página
+    }
+  }
+}

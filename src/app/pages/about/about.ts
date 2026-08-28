@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../core/services/seo.service';
-import { PROFESSIONALS_DATA } from '../../shared/data/professionals.data';
+import { PROFESSIONALS } from '../../shared/data/professionals.data';
 import { ProfessionalCard } from '../../shared/components/professional-card/professional-card';
 import { CtaSection } from '../../shared/components/cta-section/cta-section';
 
@@ -13,7 +13,7 @@ import { CtaSection } from '../../shared/components/cta-section/cta-section';
 })
 export class About implements OnInit {
   private readonly seoService = inject(SeoService);
-  readonly professionals = PROFESSIONALS_DATA;
+  readonly professionals = PROFESSIONALS;
 
   ngOnInit(): void {
     this.seoService.update({

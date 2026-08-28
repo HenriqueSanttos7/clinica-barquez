@@ -93,6 +93,7 @@
   </div>
 </section>
 
+<!-- 🩺 Seção de Serviços Atualizada com o Componente Reutilizável -->
 <section class="home-services section-space">
   <div class="home-services__container container">
     <div class="home-section__header">
@@ -113,27 +114,12 @@
     </div>
 
     <div class="home-services__grid">
-      @for (service of servicesDestaque; track service.id) {
-        <article class="home-service-card surface-card">
-          <div class="icon-box">
-            <i [class]="service.icone" aria-hidden="true"></i>
-          </div>
-
-          <h3>{{ service.nome }}</h3>
-
-          <p>{{ service.resumo }}</p>
-
-          <a class="text-link" [routerLink]="['/servicos', service.id]">
-            Saiba mais
-
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </article>
+      @for (service of featureServices; track service.id) {
+        <app-service-card [service]="service" />
       }
     </div>
   </div>
 </section>
-
 
 <section class="home-team section-space">
   <div class="home-team__container container">
@@ -165,7 +151,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="home-differentials section-space">
   <div class="home-differentials__container container">
