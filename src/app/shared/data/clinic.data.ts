@@ -1,21 +1,4 @@
-export interface ClinicContact {
-  whatsappDisplay: string;
-  whatsappUrl: string;
-
-  instagram: string;
-  facebook: string;
-
-  email: string;
-  emailUrl: string;
-
-  addressLine1: string;
-  addressLine2: string;
-
-  mapsUrl: string;
-  mapsEmbedUrl: string;
-
-  hours: string[];
-}
+import { ClinicContact } from "../models/clinic.models";
 
 export const CLINIC_CONTACT: ClinicContact = {
   whatsappDisplay: '(92) 98182-6512',
