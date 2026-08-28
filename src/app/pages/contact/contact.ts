@@ -5,12 +5,13 @@ import emailjs from '@emailjs/browser';
 import { environment } from '../../../environments/environment';
 import { CLINIC_CONTACT } from '../../shared/data/clinic.data';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { CtaSection } from '../../shared/components/cta-section/cta-section';
 
 type StatusEnvio = 'sucesso' | 'erro' | null;
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, CtaSection],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

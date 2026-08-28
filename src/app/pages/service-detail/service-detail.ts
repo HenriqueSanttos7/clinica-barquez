@@ -15,7 +15,10 @@ export class ServiceDetail {
   service?: Service;
 
   constructor(private readonly route: ActivatedRoute) {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.service = SERVICES.find((service) => service.id === id);
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+
+      this.service = SERVICES.find((service) => service.id === id);
+    })
   }
 }
