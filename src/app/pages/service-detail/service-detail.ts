@@ -5,10 +5,12 @@ import { ServiceCard } from '../../shared/components/service-card/service-card';
 import { SERVICES } from '../../shared/data/services.data';
 import { Service } from '../../shared/models/service.models';
 
+import { CtaSection } from '../../shared/components/cta-section/cta-section';
+
 
 @Component({
   selector: 'app-service-detail',
-  imports: [RouterLink, ServiceCard],
+  imports: [RouterLink, CtaSection, ServiceCard],
   templateUrl: './service-detail.html',
   styleUrl: './service-detail.scss',
 })

@@ -24,4 +24,27 @@ export const PROFESSIONALS: Professional[] = [
     imagem: '/images/team/giully.webp',
     destaqueHome: true,
   },
+  {
+    id: 'henrique',
+    nome: 'Dr. Henrique Santos',
+    titulo: 'Médico',
+    especialidade: 'Clínica Médica',
+    registro: 'CRM 00000-AM',
+    descricao:
+      'Atendimento humanizado, com foco em cuidado integral, prevenção e acompanhamento da saúde.',
+    imagem: '',
+    destaqueHome: false,
+  },
+
+  {
+    id: 'vitoria',
+    nome: 'Dra. Vitória Maria',
+    titulo: 'Médica',
+    especialidade: 'Nutrição',
+    registro: 'CRM 00000-AM',
+    descricao:
+      'Atendimento acolhedor e individualizado, com atenção às necessidades de cada paciente.',
+    imagem: '',
+    destaqueHome: false,
+  },
 ];

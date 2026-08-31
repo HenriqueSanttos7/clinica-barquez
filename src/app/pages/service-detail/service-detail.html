@@ -11,34 +11,26 @@
           <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
         </a>
 
-        <span class="section-eyebrow"> Nossos serviços </span>
+        <span class="section-eyebrow">Nossos serviços</span>
 
-        <h1>
-          {{ service.nome }}
-        </h1>
+        <h1>{{ service.nome }}</h1>
 
         <div class="section-divider" aria-hidden="true">
           <span></span>
           <span>✦</span>
         </div>
 
-        <p class="service-hero__subtitle">
-          {{ service.subtitulo }}
-        </p>
+        <p class="service-hero__subtitle">{{ service.subtitulo }}</p>
 
-        <p class="service-hero__description">
-          {{ service.resumo }}
-        </p>
+        <p class="service-hero__description">{{ service.resumo }}</p>
 
+        <!-- 🟢 Botão padronizado com classe própria para não esticar -->
         <a
-          class="btn btn--primary"
+          class="service-hero__button"
           routerLink="/contato"
-          [queryParams]="{
-            assunto: 'consulta',
-          }"
+          [queryParams]="{ assunto: 'consulta' }"
         >
           Agendar consulta
-
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
@@ -52,8 +44,7 @@
   <section class="service-about section-space">
     <div class="service-about__container container">
       <div class="service-about__intro">
-        <span class="section-eyebrow"> Sobre o serviço </span>
-
+        <span class="section-eyebrow">Sobre o serviço</span>
         <h2 class="section-heading">Cuidado pensado para cada paciente</h2>
       </div>
 
@@ -74,14 +65,11 @@
         <div class="icon-box">
           <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
         </div>
-
         <h2>Quando procurar atendimento?</h2>
-
         <ul>
           @for (item of service.indicacoes; track item) {
             <li>
               <i class="fa-solid fa-check" aria-hidden="true"></i>
-
               {{ item }}
             </li>
           }
@@ -92,14 +80,11 @@
         <div class="icon-box">
           <i [class]="service.icone" aria-hidden="true"></i>
         </div>
-
         <h2>Benefícios do acompanhamento</h2>
-
         <ul>
           @for (item of service.beneficios; track item) {
             <li>
               <i class="fa-solid fa-check" aria-hidden="true"></i>
-
               {{ item }}
             </li>
           }
@@ -108,21 +93,26 @@
     </div>
   </section>
 
-  <aside class="services-sidebar">
-    <h3 class="sidebar-title">Outras Especialidades</h3>
+  <!-- 🟢 Nova seção de Outras Especialidades padronizada e responsiva -->
+  <section class="service-others section-space">
+    <div class="container">
+      <div class="service-others__header">
+        <h2>Outras Especialidades</h2>
+      </div>
 
-    <div class="sidebar-list">
-      @for (item of allServices; track item.id) {
-        <app-service-card [service]="item" [compact]="true" [active]="item.id === currentId" />
-      }
+      <div class="service-others__grid">
+        @for (item of allServices; track item.id) {
+          <app-service-card [service]="item" [compact]="true" [active]="item.id === currentId" />
+        }
+      </div>
     </div>
-  </aside>
+  </section>
+
+  <app-cta-section></app-cta-section>
 } @else {
   <section class="service-not-found container">
     <h1>Serviço não encontrado</h1>
-
     <p>O serviço solicitado não está disponível.</p>
-
-    <a routerLink="/servicos"> Ver todos os serviços </a>
+    <a routerLink="/servicos">Ver todos os serviços</a>
   </section>
 }

@@ -30,7 +30,8 @@ export const SERVICES: Service[] = [
     id: 'cardiologia',
     nome: 'Cardiologia',
     subtitulo: 'Cuidando do seu coração',
-    resumo: 'Especializada no diagnóstico e tratamento de doenças do coração e do sistema circulatório.',
+    resumo:
+      'Especializada no diagnóstico e tratamento de doenças do coração e do sistema circulatório.',
     descricaoCompleta: [
       'Avaliação completa da saúde cardiovascular',
       'Exames de imagem e laboratoriais avançados',
@@ -53,7 +54,8 @@ export const SERVICES: Service[] = [
     id: 'ginecologia',
     nome: 'Ginecologia',
     subtitulo: 'Cuidados especializados para a saúde feminina',
-    resumo: 'Cuidados especializados para a saúde feminina, incluindo exames, consultas e tratamentos.',
+    resumo:
+      'Cuidados especializados para a saúde feminina, incluindo exames, consultas e tratamentos.',
     descricaoCompleta: [
       'Atendimento personalizado e humanizado',
       'Equipe de profissionais qualificados',
@@ -77,7 +79,8 @@ export const SERVICES: Service[] = [
     id: 'nutricao',
     nome: 'Nutrição',
     subtitulo: 'Promovendo hábitos alimentares saudáveis',
-    resumo: 'A Nutrição oferece orientação e acompanhamento para promover hábitos alimentares saudáveis e melhorar a qualidade de vida.',
+    resumo:
+      'A Nutrição oferece orientação e acompanhamento para promover hábitos alimentares saudáveis e melhorar a qualidade de vida.',
     descricaoCompleta: [
       'Avaliação nutricional individualizada',
       'Elaboração de planos alimentares personalizados',
@@ -101,7 +104,8 @@ export const SERVICES: Service[] = [
     id: 'psicologia',
     nome: 'Psicologia',
     subtitulo: 'Cuidando da saúde mental e emocional',
-    resumo: 'A Psicologia oferece atendimento especializado para cuidar da saúde mental e emocional, com foco em prevenção, diagnóstico e tratamento.',
+    resumo:
+      'A Psicologia oferece atendimento especializado para cuidar da saúde mental e emocional, com foco em prevenção, diagnóstico e tratamento.',
     descricaoCompleta: [
       'Avaliação psicológica individualizada',
       'Terapias personalizadas',
@@ -125,7 +129,8 @@ export const SERVICES: Service[] = [
     id: 'pediatria',
     nome: 'Pediatria',
     subtitulo: 'Cuidando da saúde e do desenvolvimento infantil',
-    resumo: 'A Pediatria oferece cuidados especializados para crianças e adolescentes, acompanhando seu crescimento, desenvolvimento e saúde integral.',
+    resumo:
+      'A Pediatria oferece cuidados especializados para crianças e adolescentes, acompanhando seu crescimento, desenvolvimento e saúde integral.',
     descricaoCompleta: [
       'Acompanhamento do crescimento e desenvolvimento',
       'Atendimento personalizado e humanizado',

@@ -2,7 +2,6 @@
   <div class="services-hero__container container">
     <div class="services-hero__content">
       <span class="services-hero__eyebrow">Clínica Barquez</span>
-
       <h1 class="services-hero__title">Cuidado completo para sua saúde</h1>
 
       <div class="services-hero__divider" aria-hidden="true">
@@ -19,7 +18,6 @@
     <div class="services-hero__image-wrapper">
       <picture>
         <source media="(max-width: 760px)" srcset="/images/services/banner-servicos.jpg" />
-
         <img
           class="services-hero__image"
           src="/images/services/banner-servicos-desktop.jpg"
@@ -35,7 +33,6 @@
     <div class="services__header">
       <div>
         <span class="services__eyebrow">Nossas especialidades</span>
-
         <h2 class="services__title">Encontre o cuidado ideal para você</h2>
       </div>
 
@@ -44,43 +41,19 @@
       </p>
     </div>
 
+    <!-- 🩺 Grid usando o novo componente -->
     <div class="services__grid">
       @for (service of services; track service.id) {
-        <article class="service-card">
-          <div class="service-card__icon">
-            <i [class]="service.icone" aria-hidden="true"></i>
-          </div>
-
-          <h3>
-            {{ service.nome }}
-          </h3>
-
-          <p>
-            {{ service.resumo }}
-          </p>
-
-          <a
-            [routerLink]="['/servicos', service.id]"
-            [attr.aria-label]="'Saiba mais sobre ' + service.nome"
-          >
-            Saiba mais
-
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </article>
+        <app-service-card [service]="service"></app-service-card>
       }
     </div>
   </div>
 </section>
 
-<section class="services-cta">
-  <div class="services-cta__container container">
-    <div>
-      <span class="services-cta__eyebrow">Estamos aqui para cuidar de você</span>
-
-      <h2>Precisa de ajuda para escolher um atendimento?</h2>
-
-      <p>Entre em contato com nossa equipe para receber orientação e agendar sua consulta.</p>
-    </div>
-  </div>
-</section>
+<!-- 🎯 CTA reutilizável com textos específicos para esta página -->
+<app-cta-section
+  tagline="Estamos aqui para cuidar de você"
+  title="Precisa de ajuda para escolher um atendimento?"
+  description="Entre em contato com nossa equipe para receber orientação e agendar sua consulta."
+>
+</app-cta-section>
