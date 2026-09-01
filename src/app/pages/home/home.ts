@@ -1,6 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { NgOptimizedImage } from '@angular/common';
+
 import { ProfessionalCard } from '../../shared/components/professional-card/professional-card';
 import { CtaSection } from '../../shared/components/cta-section/cta-section';
 import { ServiceCard } from '../../shared/components/service-card/service-card';
@@ -12,7 +14,7 @@ import { SERVICES } from '../../shared/data/services.data';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, ProfessionalCard, CtaSection, ServiceCard],
+  imports: [RouterLink, NgOptimizedImage, ProfessionalCard, CtaSection, ServiceCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

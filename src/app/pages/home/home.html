@@ -48,11 +48,14 @@
 
     <div class="hero__image-wrapper">
       <picture>
-        <source media="(max-width: 760px)" srcset="/images/home/banner_clinica_900x650.webp" />
+        <source media="(max-width: 760px)" ngSrcset="/images/home/banner_clinica_900x650.webp" />
 
         <img
           class="hero__image"
-          src="/images/home/banner_clinica_900x400.webp"
+          ngSrc="/images/home/banner_clinica_900x400.webp"
+          width="900"
+          height="400"
+          priority
           alt="Profissional da Clínica Barquez em ambiente clínico acolhedor"
         />
       </picture>
@@ -63,7 +66,12 @@
 <section class="home-about section-space">
   <div class="home-about__container container">
     <div class="home-about__image">
-      <img src="/images/home/sobre-clinica.webp" alt="Ambiente da Clínica Barquez" />
+      <img
+        ngSrc="/images/home/sobre-clinica.webp"
+        width="600"
+        height="471"
+        alt="Ambiente da Clínica Barquez"
+      />
     </div>
 
     <div class="home-about__content">
