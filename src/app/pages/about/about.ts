@@ -14,6 +14,7 @@ import { CtaSection } from '../../shared/components/cta-section/cta-section';
 export class About implements OnInit {
   private readonly seoService = inject(SeoService);
   readonly professionals = PROFESSIONALS;
+  readonly featuredProfessional = PROFESSIONALS.slice(0,2);
 
   ngOnInit(): void {
     this.seoService.update({

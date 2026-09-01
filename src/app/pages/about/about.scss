@@ -152,6 +152,11 @@
   justify-content: center;
 
   background-color: var(--color-ivory);
+
+  .text-link {
+    margin-top: 1rem;
+    width: fit-content;
+  }
 }
 
 .about-hero__team-header {

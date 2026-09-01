@@ -21,15 +21,25 @@
     <div class="about-hero__team">
       <div class="about-hero__team-header">
         <span>Nossa equipe</span>
-
         <h2>Profissionais dedicados ao seu cuidado</h2>
       </div>
 
-      <div class="about-hero__cards">
+      <!-- <div class="about-hero__cards">
         @for (professional of professionals; track professional.id) {
           <app-professional-card [professional]="professional" />
         }
+      </div> -->
+
+      <div class="about-hero__cards">
+        @for (professional of featuredProfessional; track professional.id) {
+          <app-professional-card [professional]="professional" />
+        }
       </div>
+
+      <a class="text-link" routerLink="/equipe">
+        Ver todos os profissionais
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
     </div>
   </div>
 </section>

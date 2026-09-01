@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Service } from '../../models/service.models';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-service-card',

@@ -94,4 +94,8 @@
   </div>
 </section>
 
-<app-cta-section></app-cta-section>
+@defer (on viewport) {
+  <app-cta-section></app-cta-section>
+} @placeholder {
+  <div style="min-height: 280px;"></div>
+}
